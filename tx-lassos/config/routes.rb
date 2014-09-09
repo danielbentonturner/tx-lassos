@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  # get "log_out" => "sessions#destroy", :as => "log_out"
-  # get "log_in" => "sessions#create", :as => "log_in"
-  # get "sign_up" => "user#create", :as => "sign_up"
+  get "files" => "import_export#files", :as => "files"
   root "user#index"
   # resources :user
   # resources :sessions

@@ -29,7 +29,9 @@ User.create([
     linkedin: 'https://www.linkedin.com/pub/alix-morrow/2/702/4aa',
     pinterest: '',
     comments: 'These are comments. They are awesome. Hurray!',
-    admin: true
+    admin: true,
+    password: "stuffnthings",
+    password_confirmation: "stuffnthings"
   },
   {
     first_name: 'Texas',
@@ -43,7 +45,7 @@ User.create([
     password_hash: 'ABhdg2654sg',
     marital_status: 'Married',
     occupation: 'Biologist',
-    major: 'Biop-scientist',
+    major: 'Bio-scientist',
     pledge_class: 'Spring 2005',
     pledge_class_name: 'Sassy Six Shooters',
     grad_year: '2002',
@@ -53,7 +55,9 @@ User.create([
     linkedin: 'www.linkedin.com/pub/texas-girl/dsghsdhg',
     pinterest: 'www.pinterest.com/texas-girl',
     comments: 'These are comments. They are awesome. Hurray!',
-    admin: false
+    admin: false,
+    password: "stuffnthings",
+    password_confirmation: "stuffnthings"
   },
   {
     first_name: 'Tejas',
@@ -75,8 +79,9 @@ User.create([
     twitter: '@tejas-senorita',
     instagram: '',
     linkedin: '',
-    pinterest: 'www.pinterest.com/tejassenorita',
-    comments: 'These are comments. They are awesome. Hurray!',
-    admin: false
+    pinterest: 'www.pinterest.com/tejstuffnthings are awesome. Hurray!',
+    admin: false,
+    password: "stuffnthings",
+    password_confirmation: "stuffnthings"
   }
 ])
