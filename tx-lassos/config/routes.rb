@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get "log_out" => "sessions#destroy", :as => "log_out"
-  get "log_in" => "sessions#new", :as => "log_in"
-  get "sign_up" => "user#new", :as => "sign_up"
-  root :to => "user#new"
+  get "log_in" => "sessions#create", :as => "log_in"
+  get "sign_up" => "user#create", :as => "sign_up"
+  root :to => "user#create"
   resources :users
   resources :sessions
   # The priority is based upon order of creation: first created -> highest priority.
