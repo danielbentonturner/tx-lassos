@@ -16,7 +16,7 @@ User.create([
     zip_code: '78701',
     phone: '512-555-1234',
     email: 'alix@alixcompany.com',
-    password_digest: 'H87ywh87L0',
+    password_hash: 'H87ywh87L0',
     marital_status: 'Single',
     occupation: 'Strategic Planner',
     major: 'Advertising',
@@ -28,7 +28,8 @@ User.create([
     instagram: '',
     linkedin: 'https://www.linkedin.com/pub/alix-morrow/2/702/4aa',
     pinterest: '',
-    comments: 'These are comments. They are awesome. Hurray!'
+    comments: 'These are comments. They are awesome. Hurray!',
+    admin: true
   },
   {
     first_name: 'Texas',
@@ -39,7 +40,7 @@ User.create([
     zip_code: '78704',
     phone: '512-555-4321',
     email: 'girl@texas.com',
-    password_digest: 'ABhdg2654sg',
+    password_hash: 'ABhdg2654sg',
     marital_status: 'Married',
     occupation: 'Biologist',
     major: 'Biop-scientist',
@@ -51,7 +52,8 @@ User.create([
     instagram: 'www.instagram.com/texasgirl',
     linkedin: 'www.linkedin.com/pub/texas-girl/dsghsdhg',
     pinterest: 'www.pinterest.com/texas-girl',
-    comments: 'These are comments. They are awesome. Hurray!'
+    comments: 'These are comments. They are awesome. Hurray!',
+    admin: false
   },
   {
     first_name: 'Tejas',
@@ -62,7 +64,7 @@ User.create([
     zip_code: '78757',
     phone: '512-555-9999',
     email: 'senorita@tejas.com',
-    password_digest: '897y6342gdsf2HAge',
+    password_hash: '897y6342gdsf2HAge',
     marital_status: 'Divorced',
     occupation: 'Lawyer',
     major: 'Pre-law',
@@ -74,6 +76,7 @@ User.create([
     instagram: '',
     linkedin: '',
     pinterest: 'www.pinterest.com/tejassenorita',
-    comments: 'These are comments. They are awesome. Hurray!'
-  },
+    comments: 'These are comments. They are awesome. Hurray!',
+    admin: false
+  }
 ])
