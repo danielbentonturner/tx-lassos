@@ -1,0 +1,18 @@
+/home/vagrant/.rbenv/versions/2.0.0-p481/bin/ruby -r ./siteconf20140908-10523-a6qmeh.rb extconf.rb 
+creating Makefile
+
+make "DESTDIR=" clean
+make: Warning: File `Makefile' has modification time 4.7e+02 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+make "DESTDIR="
+make: Warning: File `Makefile' has modification time 4.7e+02 s in the future
+compiling parser.c
+linking shared-object json/ext/parser.so
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+make "DESTDIR=" install
+make: Warning: File `Makefile' has modification time 4.7e+02 s in the future
+/usr/bin/install -c -m 0755 parser.so ./.gem.20140908-10523-ti074/json/ext
+installing default parser libraries
+make: warning:  Clock skew detected.  Your build may be incomplete.
