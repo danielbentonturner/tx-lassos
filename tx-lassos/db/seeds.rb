@@ -28,7 +28,8 @@ User.create([
     instagram: '',
     linkedin: 'https://www.linkedin.com/pub/alix-morrow/2/702/4aa',
     pinterest: '',
-    comments: 'These are comments. They are awesome. Hurray!'
+    comments: 'These are comments. They are awesome. Hurray!',
+    admin: true
   },
   {
     first_name: 'Texas',
@@ -51,7 +52,8 @@ User.create([
     instagram: 'www.instagram.com/texasgirl',
     linkedin: 'www.linkedin.com/pub/texas-girl/dsghsdhg',
     pinterest: 'www.pinterest.com/texas-girl',
-    comments: 'These are comments. They are awesome. Hurray!'
+    comments: 'These are comments. They are awesome. Hurray!',
+    admin: false
   },
   {
     first_name: 'Tejas',
@@ -74,6 +76,7 @@ User.create([
     instagram: '',
     linkedin: '',
     pinterest: 'www.pinterest.com/tejassenorita',
-    comments: 'These are comments. They are awesome. Hurray!'
-  },
+    comments: 'These are comments. They are awesome. Hurray!',
+    admin: false
+  }
 ])

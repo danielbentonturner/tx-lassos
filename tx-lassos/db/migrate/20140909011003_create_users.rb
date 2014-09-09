@@ -22,6 +22,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :linkedin
       t.string :pinterest
       t.text :comments
+      t.boolean :admin
       t.timestamps
     end
   end

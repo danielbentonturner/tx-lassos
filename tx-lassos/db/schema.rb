@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140909011003) do
     t.string   "linkedin"
     t.string   "pinterest"
     t.text     "comments"
+    t.boolean  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
