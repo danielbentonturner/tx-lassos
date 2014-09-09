@@ -21,11 +21,12 @@ ActiveRecord::Schema.define(version: 20140909154707) do
     t.string   "state"
     t.string   "zip_code"
     t.string   "phone"
+    t.string   "email"
     t.string   "password_hash"
     t.string   "marital_status"
     t.string   "occupation"
     t.string   "major"
-    t.string   "pledge_year"
+    t.string   "pledge_class"
     t.string   "pledge_class_name"
     t.string   "grad_year"
     t.string   "facebook"
@@ -37,7 +38,6 @@ ActiveRecord::Schema.define(version: 20140909154707) do
     t.boolean  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
