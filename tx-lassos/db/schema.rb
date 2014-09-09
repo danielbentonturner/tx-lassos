@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140909011003) do
     t.string   "zip_code"
     t.string   "phone"
     t.string   "email"
-    t.string   "password_digest"
+    t.string   "password_hash"
     t.string   "marital_status"
     t.string   "occupation"
     t.string   "major"
