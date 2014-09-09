@@ -14,11 +14,11 @@
  *= require_self
  */
 
- *, *:before, *:after {
+/* *, *:before, *:after {
  	box-sizing: border-box;
  	border: 2px solid red;
  }
-
+*/
 html {
 
 }
@@ -35,3 +35,26 @@ body {
 
 }
 
+.navbar, .panel {
+	-webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.3);
+	box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.3);
+}
+
+.panel-title {
+	text-align: center;
+}
+
+.sign-div {
+	max-width: 80%;
+	margin: 0 auto;
+}
+
+#nav-title {
+	font-family: font-family: 'Dancing Script', cursive;
+}
+
+.sign-panel {
+	text-align: center;
+	border: 1px solid #BF5700;
+}
