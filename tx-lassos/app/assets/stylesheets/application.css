@@ -45,6 +45,8 @@ label{
     clear: left;
     width: 45%;
     text-align: right;
+    margin-right: 5px;
+    margin-top: 2px;
 }
 input {
   display: inline-block;
@@ -119,3 +121,25 @@ input:after {
 	float: none;
 	clear: both;
 }
+
+.remember {
+
+
+}
+
+.rendered-sign:button {
+	
+}
+
+.remem-box {
+	margin-top: 10px;
+}
+
+#user_remember_me {
+	margin-top: 7px;
+	display: inline-block;
+	float: right;
+	clear: both;
+	margin-right: 52%;
+}
+
