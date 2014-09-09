@@ -35,3 +35,10 @@ function adjustModalMaxHeightAndPosition(){
 if ($(window).height() >= 320){
     $(window).resize(adjustModalMaxHeightAndPosition).trigger("resize");
 }
+
+$(window).on('load', function() {
+    $(".rendered-sign").find(":input").addClass("btn btn-warning btn3d sign-butt center-submit");
+    $(".sign-panel").find("a:first").hide();
+    $("#user_remember_me").addClass("remember");
+    $(".mod-submit").find('input[name=commit]').addClass("btn btn-primary btn3d center-mod");
+});

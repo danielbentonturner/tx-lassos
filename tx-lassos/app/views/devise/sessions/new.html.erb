@@ -1,0 +1,78 @@
+<div class="panel panel-default sign-div">
+  <div class="panel-heading">
+    <h3 class="panel-title">Sign in</h3>
+  </div>
+  <div class="panel-body">
+  	<div class="sign-panel">
+  		<br />
+
+			<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+			  <div> <%= f.label :email %> <%= f.email_field :email, autofocus: true %> </div>
+			  <br /> <br />
+
+			  <div> <%= f.label :password %> <%= f.password_field :password, autocomplete: "off" %> </div>
+
+			  <% if devise_mapping.rememberable? -%>
+			  <br />
+			    <div class="remember"><%= f.check_box :remember_me %> <%= f.label :remember_me %> </div>
+			  <% end -%>
+			
+			<div class="center-submit cf">
+				<div class="rendered-sign">
+				  <div><%= f.submit "Log in" %></div>
+				<% end %>
+				</div>
+			</div>
+
+			<%= render "devise/shared/links" %>
+
+		    <br />
+		      <input type="submit" value ="Sign up" class="btn btn-warning btn3d sign-butt" data-toggle="modal" data-target="#myModal" />
+		    
+		   </div>
+
+		  
+	  </div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Please fill in all fields</h4>
+	      </div>
+	      <div class="modal-body">
+	        <form action="/user" method="post">
+	          &nbsp; &nbsp; &nbsp;<label for="email">Name </label>
+	          <input type="text" id="modal-name" name="user[name]">
+	          <label for="password">Pledge Class </label>
+	          <input type="text" id="modal-pledge" name="user[pledge_year]">
+	          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+	            <%= devise_error_messages! %>
+
+	            <div><%= f.label :email %><br />
+	            <%= f.email_field :email, autofocus: true %></div>
+
+	            <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
+	              <%= f.password_field :password, autocomplete: "off" %></div>
+
+	            <div><%= f.label :password_confirmation %><br />
+	              <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+	              <br />
+	        	<div class="mod-submit"><%= f.submit "Sign up" %></div>
+	          <% end %>
+	          <br /><br />
+
+	          <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	        </form> 
+	      </div>
+	      
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default btn3d" data-dismiss="modal">Close</button>
+	      </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
