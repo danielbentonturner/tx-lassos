@@ -80,3 +80,4 @@ User.create([
     admin: false
   }
 ])
+
