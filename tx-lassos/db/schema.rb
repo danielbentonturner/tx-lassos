@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20140909011003) do
     t.string   "marital_status"
     t.string   "occupation"
     t.string   "major"
-    t.string   "pledge_year"
+    t.string   "pledge_class"
     t.string   "pledge_class_name"
     t.string   "grad_year"
     t.string   "facebook"

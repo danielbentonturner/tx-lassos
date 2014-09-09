@@ -1,0 +1,10 @@
+
+<%= form_tag home_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import CSV" %>
+<% end %>
+
+<%= form_tag home_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Export CSV" %>
+<% end %>
