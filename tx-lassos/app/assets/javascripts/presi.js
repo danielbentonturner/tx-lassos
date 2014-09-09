@@ -35,8 +35,3 @@ function adjustModalMaxHeightAndPosition(){
 if ($(window).height() >= 320){
     $(window).resize(adjustModalMaxHeightAndPosition).trigger("resize");
 }
-
-$(window).on('load', function() {
-    // var scoreBanner = $('#score-stuff');
-    $('#score-stuff').html("Total Times Played:  " + $.totalStorage('played') + "    Average Score:   " + $.totalStorage('scores'));
-})

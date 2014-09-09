@@ -17,14 +17,18 @@
 /* *, *:before, *:after {
  	box-sizing: border-box;
  	border: 2px solid red;
- }
-*/
-html {
+ }*/
 
+* {
+  margin: 0;
+}
+
+html {
+	height: 100%;
 }
 
 body {
-
+	height: 100%;
 }
 
 #home {
@@ -33,6 +37,21 @@ body {
 
 #find {
 
+}
+
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 45%;
+    text-align: right;
+}
+input {
+  display: inline-block;
+  float: left;
+}
+input:after {
+	clear: both;
 }
 
 .navbar, .panel {
@@ -57,4 +76,46 @@ body {
 .sign-panel {
 	text-align: center;
 	border: 1px solid #BF5700;
+}
+
+.btn3d {
+    position:relative;
+    border:0;
+    border-radius:3px;
+    margin:15px 10px 0 0;
+    transition:all .09s linear;
+    box-shadow:0 0 0 1px transparent inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0px 4px 5px 0px rgba(0,0,0,0.3), 0px 4px 5px 0px rgba(0,0,0,0.3);
+    outline:medium none;
+    -moz-outline-style:none;
+}
+.btn3d:active {
+    top:7px;
+}
+.btn3d:focus {
+    outline:medium none;
+    -moz-outline-style:none;
+}
+
+.sign-butt {
+	float: right;
+	display: inline;
+}
+
+.site-footer {
+	bottom: 0px;
+	position: absolute;
+	background: #BF5700;
+	text-align: center;
+	color: white;
+	width: 100%;
+}
+
+.modal-body {
+	text-align: center;
+}
+
+.center-submit, .in-butt {
+	text-align: center;
+	float: none;
+	clear: both;
 }
