@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   # get "log_in" => "sessions#create", :as => "log_in"
   # get "sign_up" => "user#create", :as => "sign_up"
   root "user#index"
-  resources :user
-  resources :sessions
+  # resources :user
+  # resources :sessions
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
