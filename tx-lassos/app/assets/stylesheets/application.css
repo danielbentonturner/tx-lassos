@@ -72,7 +72,8 @@ input:after {
 }
 
 #nav-title {
-	font-family: font-family: 'Dancing Script', cursive;
+	font-family: 'Dancing Script', cursive;
+	font-size: 1.8em;
 }
 
 .sign-panel {
@@ -105,7 +106,7 @@ input:after {
 
 .site-footer {
 	bottom: 0px;
-	position: absolute;
+	position: fixed;
 	background: #BF5700;
 	text-align: center;
 	color: white;
@@ -174,5 +175,69 @@ input:after {
 	display: inline-block;
 	height: 260px;
 	border: 2px solid #BF5700;
+	margin-left: 10px;
+	width: 37%;
+	text-align: center;
+	background: #F5F5F5;
+	float: left;
+}
+
+.school-info {
+	margin-left: 12px;
+}
+
+.professional {
+	margin-left: 12px;
+	background: #F5F5F5;
+	border:2px solid #BF5700;
+	display: inline-block;
+	max-width: 37%;
+	height: 260px;
+	text-align: center;
+	padding: 0px 10px 0px 10px;
+}
+
+.section-header {
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: underline;
+	color: #BF5700;
+	font-family: 'Lusitana', serif;
+}
+
+.wrapper {
+	margin: 10px;
+	height: 270px;
+	width: 100%;
+	margin: 0;
+}
+
+.panel-body-prof-main {
+	padding: 10px 10px 0px 10px;
+	text-align: center;
+}
+
+.wrapper-contact {
+	margin: 10px;
+	height: 200px;
+	width: 100%;
+	margin: 0;
+}
+
+.address, .social, .misc {
+	background: #F5F5F5;
+	border:2px solid #BF5700;
+	width: 32%;
+	display: inline-block;
+	height: 180px;
+	float: left;
+}
+
+
+.address {
+	float: left;
+}
+
+.social, .misc {
 	margin-left: 20px;
 }

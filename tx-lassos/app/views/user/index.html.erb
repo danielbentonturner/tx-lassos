@@ -1,15 +1,69 @@
-<div class="panel panel-default sign-div">
+<div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Welcome, <%= current_user.first_name %> <%= current_user.last_name %></h3>
   </div>
-  <div class="panel-body">
-    <div class="profile-top">
-      <%= image_tag current_user.gravatar_url(:size => 256), :class => 'grav-photo' %>
-      <div class="profile-main">
-        <br /><h2>testing, testing, 123. Something something</h2>
+  <div class="panel-body-prof-main">
+    <div class="wrapper">
+      <div class="grav-div">
+        <%= image_tag current_user.gravatar_url(:size => 256), :class => 'grav-photo' %>
       </div>
-      <br />
-      <br />
+        <div class="profile-main">
+          <div class="school-info">
+            <h2 class="section-header">School Info</h2>
+            <h3><b>Pledge Class:</b> <%= current_user.pledge_class %></h3>
+            <h3><b>Pledge Class Name:</b> <%= current_user.pledge_class_name %></h3>
+            <h3><b>Graduation Year:</b> <%= current_user.grad_year %></h3>
+            <h3><b>Major:</b> <%= current_user.major %></h3>
+          </div>
+        </div>
+        <div class="professional">
+          <h2 class="section-header">Professional</h2>
+          <h3><b>Employer: </b><%= current_user.employer %></h3> 
+          <h3><b>Postition: </b><%= current_user.job_title %></h3> 
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Contact Information and Social Networking</h3>
+  </div>
+  <div class="panel-body-prof-main">
+    <div class="wrapper-contact">
+      <div class="address">
+        <h3 class="section-header">Address</h3>
+        <p><%= current_user.street %></p>
+        <p><%= current_user.city %>, <%=current_user.state %> <%= current_user.zip_code %></p>
+      </div>
+      <div class="social">
+        <h3 class="section-header">Social Networking</h3>
+        <p><i class="fa fa-facebook"></i> <%= current_user.facebook %></p>
+        <p><i class="fa fa-twitter"></i> <%= current_user.twitter %></p>
+        <p><i class="fa fa-instagram"></i> <%= current_user.instagram %></p>
+        <p><i class="fa fa-pinterest"></i> <%= current_user.pinterest %></p>
+      </div>
+      <div class="misc">
+        <h3 class="section-header">Contact</h3>
+        <p><i class="fa fa-phone"></i></i> <%= current_user.phone %></p>
+        <p><i class="fa fa-envelope"></i> <%= current_user.email %></p>
+        <p><% if current_user.email2 %><i class="fa fa-envelope-o"></i> <%= current_user.email2 %> <% end %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Shout Out</h3>
+  </div>
+  <div class="panel-body-prof-main">
+    <div class="wrapper-contact">
+      <div class="comments">
+        <p><%= current_user.comments %></p>
+      </div>
+
+
     </div>
   </div>
 </div>
