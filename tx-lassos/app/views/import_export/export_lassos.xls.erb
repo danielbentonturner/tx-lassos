@@ -8,8 +8,7 @@
     <Table>
       <Row>
         <Cell><Data ss:Type="String">ID</Data></Cell>
-        <Cell><Data ss:Type="String">First Name</Data></Cell>
-        <Cell><Data ss:Type="String">Last Name</Data></Cell>
+        <Cell><Data ss:Type="String">Name</Data></Cell>
         <Cell><Data ss:Type="String">Street Address</Data></Cell>
         <Cell><Data ss:Type="String">City</Data></Cell>
         <Cell><Data ss:Type="String">State</Data></Cell>
@@ -34,8 +33,7 @@
       <% @users.each do |lasso| %>
       <Row>
         <Cell><Data ss:type="Number"><%= lasso.id %></Data></Cell>
-        <Cell><Data ss:type="String"><%= lasso.first_name %></Data></Cell>
-        <Cell><Data ss:type="String"><%= lasso.last_name %></Data></Cell>
+        <Cell><Data ss:type="String"><%= lasso.name %></Data></Cell>
         <Cell><Data ss:type="String"><%= lasso.street %></Data></Cell>
         <Cell><Data ss:type="String"><%= lasso.city %></Data></Cell>
         <Cell><Data ss:type="String"><%= lasso.state %></Data></Cell>

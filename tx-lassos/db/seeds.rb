@@ -8,8 +8,7 @@
 
 User.create([
   {
-    first_name: 'Alix',
-    last_name: 'Morrow',
+    name: 'Alix Morrow',
     street: '123 Something St.',
     city: 'Austin',
     state: 'Texas',
@@ -36,8 +35,7 @@ User.create([
     password_confirmation: "stuffnthings"
   },
   {
-    first_name: 'Texas',
-    last_name: 'Girl',
+    name: 'Texas Girl',
     street: '888 Thing Place',
     city: 'Austin',
     state: 'Texas',
@@ -63,8 +61,7 @@ User.create([
     password_confirmation: "stuffnthings"
   },
   {
-    first_name: 'Joey',
-    last_name: 'G',
+    name: 'Joey G',
     street: '123 Something St.',
     city: 'Austin',
     state: 'Texas',
@@ -90,8 +87,7 @@ User.create([
     password_confirmation: "stuffnthings"
   },
   {
-    first_name: 'Tejas',
-    last_name: 'Senorita',
+    name: 'Tejas Senorita',
     street: '777 Bueno Real',
     city: 'Austin',
     state: 'Texas',
