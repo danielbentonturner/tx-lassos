@@ -6,8 +6,8 @@ Texas Lassos Alumni website: http://www.lassoalumni.org/
 4. User profile will be displayed as a contact card, with links for e-mail and social media.
 5. *Admin will verify user registration. <- Might try via facebook auth, if we can tie to closed FB group membership.
 6. Admin can edit user profiles.
-7. Admin can import AND export CSV.
-8. User profiles entered via imported CSV needs to be able to be tied to User profile BEFORE 
+7. Admin can import AND export XLS.
+8. User profiles entered via imported XLS needs to be able to be tied to User profile BEFORE 
    User registers.
 9. Web-app needs to be linked from the alumni site, and hosted on web.
 
