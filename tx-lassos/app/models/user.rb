@@ -3,12 +3,11 @@ class User < ActiveRecord::Base
   include Gravtastic
   gravtastic
 
-  def self.import(file)
-    CSV.foreach(file.path, headers: true) do |row|
-      user = find_by_id(row["id"]) || new
-      user.attributes = row.to_hash.slice(*accessible_attributes)
-      user.save!
-    end
+  def self.import(upload)
+    Spreadsheet.client_encoding = 'UTF-8'
+    book = upload['datafile'].original_filename
+    directory = "public/data"
+    
   end
 
   def self.export(options = {})

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  get "files" => "import_export#files", :as => "files"
+  get "import" => "import_export#import_lassos", :as => "import"
+  get "export" => "import_export#export_lassos", :as => "export"
   root "user#index"
   # resources :user
   # resources :sessions

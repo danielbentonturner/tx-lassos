@@ -1,8 +1,7 @@
 class ImportExportController < ApplicationController
 
-  def files
+  def export_lassos
     @users = User.all
-    
     respond_to do |format|
       format.html
       format.csv { send_data @users.export}
@@ -10,9 +9,9 @@ class ImportExportController < ApplicationController
     end
   end
 
-  def import
+  def import_lassos
     User.import(params[:file])
-    redirect_to SOMETHING, flash: "User data imported."
+    redirect_to root_url, flash: "User data imported."
   end
 
 end
