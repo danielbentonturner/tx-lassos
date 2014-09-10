@@ -23,7 +23,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :instagram
       t.string :pinterest
       t.text :comments
-      t.boolean :admin
+      t.boolean :admin, default: false
+      t.boolean :approved, default: false
       t.timestamps
     end
   end

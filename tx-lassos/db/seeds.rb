@@ -31,6 +31,7 @@ User.create([
     pinterest: '',
     comments: 'These are comments. They are awesome. Hurray!',
     admin: true,
+    approved: true,
     password: "stuffnthings",
     password_confirmation: "stuffnthings"
   },
@@ -57,7 +58,7 @@ User.create([
     instagram: 'www.instagram.com/texasgirl',
     pinterest: 'www.pinterest.com/texas-girl',
     comments: 'These are comments. They are awesome. Hurray!',
-    admin: false,
+    approved: true,
     password: "stuffnthings",
     password_confirmation: "stuffnthings"
   },
@@ -82,6 +83,7 @@ User.create([
     pinterest: '',
     comments: 'These are comments. They are awesome. Hurray!',
     admin: true,
+    approved: true,
     password: "stuffnthings",
     password_confirmation: "stuffnthings"
   },
@@ -108,7 +110,6 @@ User.create([
     instagram: '',
     pinterest: 'www.pinterest.com/tejstuff',
     comments: 'These are comments. They are awesome. Hurray!',
-    admin: false,
     password: "stuffnthings",
     password_confirmation: "stuffnthings"
   }
