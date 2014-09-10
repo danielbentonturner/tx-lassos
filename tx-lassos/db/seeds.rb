@@ -70,9 +70,7 @@ User.create([
     zip_code: '78753',
     phone: '512-555-1234',
     email: 'digitaljedi@outlook.com',
-    password_hash: 'H87ywh87L0',
     marital_status: 'Single',
-    occupation: 'Strategic Planner',
     major: 'Advertising',
     pledge_class: '2122',
     pledge_class_name: 'Idiot',
@@ -101,7 +99,7 @@ User.create([
     pledge_class: 'Fall 2001',
     pledge_class_name: 'Crazy Cowgirls',
     grad_year: '2005',
-    employer: 'Dewey, Cheatum, and Howe'
+    employer: 'Dewey, Cheatum, and Howe',
     job_title: 'Lawyer',
     marital_status: 'Divorced',
     linkedin: '',
