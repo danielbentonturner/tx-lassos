@@ -1,6 +1,10 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Welcome, <%= current_user.first_name %> <%= current_user.last_name %></h3>
+    <span class="panel-title">Welcome, <%= current_user.name %>
+      <input type="button" class="btn btn-primary pull-right edit" value="Edit"/>
+      <input type="button" class="btn btn-primary pull-right edit" value="Edit"/>
+      <input type="button" class="btn btn-primary pull-right edit" value="Edit"/>
+    </span>
   </div>
   <div class="panel-body-prof-main">
     <div class="wrapper">
@@ -8,18 +12,20 @@
         <%= image_tag current_user.gravatar_url(:size => 256), :class => 'grav-photo' %>
       </div>
         <div class="profile-main">
+            <h2 class="section-header-top">School Info</h2>
           <div class="school-info">
-            <h2 class="section-header">School Info</h2>
-            <h3><b>Pledge Class:</b> <%= current_user.pledge_class %></h3>
-            <h3><b>Pledge Class Name:</b> <%= current_user.pledge_class_name %></h3>
-            <h3><b>Graduation Year:</b> <%= current_user.grad_year %></h3>
-            <h3><b>Major:</b> <%= current_user.major %></h3>
+            <p><b>Pledge Class:</b> <%= current_user.pledge_class %></p>
+            <p><b>Pledge Class Name:</b> <%= current_user.pledge_class_name %></p>
+            <p><b>Graduation Year:</b> <%= current_user.grad_year %></p>
+            <p><b>Major:</b> <%= current_user.major %></p>
           </div>
         </div>
         <div class="professional">
-          <h2 class="section-header">Professional</h2>
-          <h3><b>Employer: </b><%= current_user.employer %></h3> 
-          <h3><b>Postition: </b><%= current_user.job_title %></h3> 
+          <h2 class="section-header-top">Professional</h2>
+          <div class="pro-sub">
+            <p><b>Employer: </b><%= current_user.employer %></p> 
+            <p><b>Postition: </b><%= current_user.job_title %></p> 
+          </div>
         </div>
       </div>
   </div>
@@ -38,10 +44,10 @@
       </div>
       <div class="social">
         <h3 class="section-header">Social Networking</h3>
-        <p><i class="fa fa-facebook"></i> <%= current_user.facebook %></p>
-        <p><i class="fa fa-twitter"></i> <%= current_user.twitter %></p>
-        <p><i class="fa fa-instagram"></i> <%= current_user.instagram %></p>
-        <p><i class="fa fa-pinterest"></i> <%= current_user.pinterest %></p>
+        <p><% if current_user.facebook != "" %><i class="fa fa-facebook"></i> <%= current_user.facebook %><% end %></p>
+        <p><% if current_user.twitter != "" %><i class="fa fa-twitter"></i> <%= current_user.twitter %><% end %></p>
+        <p><% if current_user.instagram != "" %><i class="fa fa-instagram"></i> <%= current_user.instagram %><% end %></p>
+        <p><% if current_user.pinterest != "" %><i class="fa fa-pinterest"></i> <%= current_user.pinterest %><% end %></p>
       </div>
       <div class="misc">
         <h3 class="section-header">Contact</h3>
@@ -53,13 +59,13 @@
   </div>
 </div>
 
-<div class="panel panel-default">
+<div class="panel panel-default comments">
   <div class="panel-heading">
     <h3 class="panel-title">Shout Out</h3>
   </div>
   <div class="panel-body-prof-main">
     <div class="wrapper-contact">
-      <div class="comments">
+      <div class="comments-area">
         <p><%= current_user.comments %></p>
       </div>
 

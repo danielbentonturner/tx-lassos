@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
-
-/* *, *:before, *:after {
+/*
+ *, *:before, *:after {
  	box-sizing: border-box;
  	border: 2px solid red;
  }*/
@@ -180,24 +180,30 @@ input:after {
 	text-align: center;
 	background: #F5F5F5;
 	float: left;
+	background: url(rope.png) #F5F5F5;
+	background-size: 100% 100%;
 }
 
-.school-info {
-	margin-left: 12px;
+.school-info, .pro-sub {
+	margin: 16px 40px 10px 40px;
+
+
 }
 
 .professional {
 	margin-left: 12px;
-	background: #F5F5F5;
+	background: url(rope.png) #F5F5F5;
+	background-size: 100% 100%;
 	border:2px solid #BF5700;
 	display: inline-block;
 	max-width: 37%;
 	height: 260px;
 	text-align: center;
 	padding: 0px 10px 0px 10px;
+	width: 37%;
 }
 
-.section-header {
+.section-header, .section-header-top {
 	font-weight: bold;
 	font-style: italic;
 	text-decoration: underline;
@@ -240,4 +246,15 @@ input:after {
 
 .social, .misc {
 	margin-left: 20px;
+}
+
+.section-header-top {
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	top; 1;
+}
+
+.comments {
+	margin-bottom: 60px;
 }
