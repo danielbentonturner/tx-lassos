@@ -12,5 +12,8 @@ class UserController < ApplicationController
     end
   end
 
+  def edit
+  end
+
 end
 

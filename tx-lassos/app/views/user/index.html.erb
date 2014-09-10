@@ -41,15 +41,16 @@
         <h4 class="modal-title" id="myModalLabel">Please fill in all fields</h4>
       </div>
       <div class="modal-body">
-        <form action="/user" method="post">
-          &nbsp; &nbsp; &nbsp;<label for="email">Name: </label>
+        <form action="/users/sign_out" method="delete">
+          <input type="text" name="my_input">
+          <!-- &nbsp; &nbsp; &nbsp;<label for="email">Name: </label>
           <input type="text" id="modal-name" name="user[name]">
           <br/>
           <br/>
-          <label for="password">Pledge Class: </label>
+           <label for="password">Pledge Class: </label>
           <input type="text" id="modal-pledge" name="user[pledge_year]">
-          <br/>
-          <br/>
+          <br/> 
+          <br/> -->
           <label for="password">Email: </label>
           <input type="text" id="modal-email" name="user[email]">
           <br /><br />
