@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
   include Gravtastic
   gravtastic
 
+  def index
+    @first_name = user.first_name
+  end
+
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
       Users.create! row.to_hash

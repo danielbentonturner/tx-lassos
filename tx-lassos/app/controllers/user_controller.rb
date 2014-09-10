@@ -3,6 +3,10 @@ class UserController < ApplicationController
 
   def index
     @users = User.all
+    # puts USER!!!
+    # puts ApplicationController.current_user
+    # @current_user = ApplicationController.current_user
+    # @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   def show
