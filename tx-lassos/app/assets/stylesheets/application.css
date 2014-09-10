@@ -163,3 +163,16 @@ input:after {
 	width: 100%;
 	margin-bottom: 10px;
 }
+
+.grav-photo {
+	border:2px solid #BF5700;
+	float: left;
+}
+
+.profile-main {
+	float: left;
+	display: inline-block;
+	height: 260px;
+	border: 2px solid #BF5700;
+	margin-left: 20px;
+}

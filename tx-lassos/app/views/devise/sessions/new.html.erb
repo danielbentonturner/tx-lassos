@@ -44,18 +44,21 @@
 	        <h4 class="modal-title" id="myModalLabel">Please fill in all fields</h4>
 	      </div>
 	      <div class="modal-body">
-	        <form action="/user/sign_in" method="post">
-	          &nbsp; &nbsp; &nbsp;<label for="email">First Name </label>
-	          <input type="text" id="modal-name" name="user[first_name]">
-	          <label for="email">Last Name </label>
-	          <input type="text" id="modal-name" name="user[last_name]">
-	          <label for="password">Pledge Class </label>
-	          <input type="text" id="modal-pledge" name="user[pledge_year]">
+
 	          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 	            <%= devise_error_messages! %>
 
+	            <div><%= f.label :first_name %><br />
+	            <%= f.text_field :first_name, autofocus: true %></div>
+
+	            <div><%= f.label :last_name %><br />
+	            <%= f.text_field :last_name %></div>
+
+	            <div><%= f.label :pledge_class %><br />
+	            <%= f.text_field :pledge_class %></div>
+
 	            <div><%= f.label :email %><br />
-	            <%= f.email_field :email, autofocus: true %></div>
+	            <%= f.email_field :email %></div>
 
 	            <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
 	              <%= f.password_field :password, autocomplete: "off" %></div>
@@ -67,8 +70,7 @@
 	          <% end %>
 	          <br /><br />
 
-	          <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-	        </form> 
+	          
 	      </div>
 	      
 	      <div class="modal-footer">

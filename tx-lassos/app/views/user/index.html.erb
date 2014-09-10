@@ -3,16 +3,13 @@
     <h3 class="panel-title">Welcome, <%= current_user.first_name %> <%= current_user.last_name %></h3>
   </div>
   <div class="panel-body">
-  	<div class="profile-top">
-      <%= image_tag current_user.gravatar_url(:size => 256) %>
-  		<br />
-	    
-	    <br />
-
-      <%= link_to "Change your password", edit_user_registration_path %>
-	    
-	   </div>
-
-	  
+    <div class="profile-top">
+      <%= image_tag current_user.gravatar_url(:size => 256), :class => 'grav-photo' %>
+      <div class="profile-main">
+        <br /><h2>testing, testing, 123. Something something</h2>
+      </div>
+      <br />
+      <br />
+    </div>
   </div>
 </div>
