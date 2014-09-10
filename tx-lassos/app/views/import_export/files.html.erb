@@ -1,10 +1,11 @@
+<p>
+  Download:
+  <%= link_to "CSV", products_path(format: "csv") %> |
+  <%= link_to "Excel", products_path(format: "xls") %>
+</p>
+
 
 <%= form_tag home_path, multipart: true do %>
   <%= file_field_tag :file %>
   <%= submit_tag "Import CSV" %>
-<% end %>
-
-<%= form_tag home_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Export CSV" %>
 <% end %>

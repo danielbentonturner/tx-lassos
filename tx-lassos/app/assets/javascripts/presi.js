@@ -36,7 +36,7 @@ if ($(window).height() >= 320){
     $(window).resize(adjustModalMaxHeightAndPosition).trigger("resize");
 }
 
-$(window).on('load', function() {
+$(document).on('ready', function() {
     $(".rendered-sign").find(":input").addClass("btn btn-warning btn3d sign-butt center-submit");
     $(".sign-panel").find("a:first").hide();
     $("#user_remember_me").addClass("remember");
