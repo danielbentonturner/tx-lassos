@@ -1,0 +1,55 @@
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Street Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip Code</th>
+    <th>Phone</th>
+    <th>E-mail</th>
+    <th>Secondary E-mail</th>
+    <th>Major</th>
+    <th>Pledge Class</th>
+    <th>Pledge Class Name</th>
+    <th>Graduation Year</th>
+    <th>Employer</th>
+    <th>Job Title</th>
+    <th>Marital Status</th>
+    <th>LinkedIn</th>
+    <th>Facebook</th>
+    <th>Twitter</th>
+    <th>Instagram</th>
+    <th>Pinterest</th>
+    <th>Comments</th>
+  </tr>
+  <% @users.each do |lasso| %>
+    <tr>
+      <td><% lasso.id %></td>
+      <td><% lasso.first_name %></td>
+      <td><% lasso.last_name %></td>
+      <td><% lasso.street %></td>
+      <td><% lasso.city %></td>
+      <td><% lasso.state %></td>
+      <td><% lasso.zip_code %></td>
+      <td><% lasso.phone %></td>
+      <td><% lasso.email %></td>
+      <td><% lasso.email2 %></td>
+      <td><% lasso.major %></td>
+      <td><% lasso.pledge_class %></td>
+      <td><% lasso.pledge_class_name %></td>
+      <td><% lasso.grad_year %></td>
+      <td><% lasso.employer %></td>
+      <td><% lasso.job_title %></td>
+      <td><% lasso.marital_status %></td>
+      <td><% lasso.linkedin %></td>
+      <td><% lasso.facebook %></td>
+      <td><% lasso.twitter %></td>
+      <td><% lasso.instagram %></td>
+      <td><% lasso.pinterest %></td>
+      <td><% lasso.comments %></td>
+    </tr>
+    <% end %>
+</table>
+

@@ -3,18 +3,16 @@ class User < ActiveRecord::Base
   include Gravtastic
   gravtastic
 
-  def index
-    @first_name = user.first_name
-  end
-
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
-      Users.create! row.to_hash
+      user = find_by_id(row["id"]) || new
+      user.attributes = row.to_hash.slice(*accessible_attributes)
+      user.save!
     end
   end
 
-  def self.export
-    CSV.generate do |csv|
+  def self.export(options = {})
+    CSV.generate(options) do |csv|
       csv << column_names
       all.each do |item|
         csv << item.attributes.values_at(*column_names)
