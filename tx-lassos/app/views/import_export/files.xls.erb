@@ -1,55 +1,64 @@
-<table border="1">
-  <tr>
-    <th>ID</th>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Street Address</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Zip Code</th>
-    <th>Phone</th>
-    <th>E-mail</th>
-    <th>Secondary E-mail</th>
-    <th>Major</th>
-    <th>Pledge Class</th>
-    <th>Pledge Class Name</th>
-    <th>Graduation Year</th>
-    <th>Employer</th>
-    <th>Job Title</th>
-    <th>Marital Status</th>
-    <th>LinkedIn</th>
-    <th>Facebook</th>
-    <th>Twitter</th>
-    <th>Instagram</th>
-    <th>Pinterest</th>
-    <th>Comments</th>
-  </tr>
-  <% @users.each do |lasso| %>
-    <tr>
-      <td><% lasso.id %></td>
-      <td><% lasso.first_name %></td>
-      <td><% lasso.last_name %></td>
-      <td><% lasso.street %></td>
-      <td><% lasso.city %></td>
-      <td><% lasso.state %></td>
-      <td><% lasso.zip_code %></td>
-      <td><% lasso.phone %></td>
-      <td><% lasso.email %></td>
-      <td><% lasso.email2 %></td>
-      <td><% lasso.major %></td>
-      <td><% lasso.pledge_class %></td>
-      <td><% lasso.pledge_class_name %></td>
-      <td><% lasso.grad_year %></td>
-      <td><% lasso.employer %></td>
-      <td><% lasso.job_title %></td>
-      <td><% lasso.marital_status %></td>
-      <td><% lasso.linkedin %></td>
-      <td><% lasso.facebook %></td>
-      <td><% lasso.twitter %></td>
-      <td><% lasso.instagram %></td>
-      <td><% lasso.pinterest %></td>
-      <td><% lasso.comments %></td>
-    </tr>
-    <% end %>
-</table>
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">First Name</Data></Cell>
+        <Cell><Data ss:Type="String">Last Name</Data></Cell>
+        <Cell><Data ss:Type="String">Street Address</Data></Cell>
+        <Cell><Data ss:Type="String">City</Data></Cell>
+        <Cell><Data ss:Type="String">State</Data></Cell>
+        <Cell><Data ss:Type="String">Zip Code</Data></Cell>
+        <Cell><Data ss:Type="String">Phone</Data></Cell>
+        <Cell><Data ss:Type="String">E-mail</Data></Cell>
+        <Cell><Data ss:Type="String">Secondary E-mail</Data></Cell>
+        <Cell><Data ss:Type="String">Major</Data></Cell>
+        <Cell><Data ss:Type="String">Pledge Class</Data></Cell>
+        <Cell><Data ss:Type="String">Pledge Class Name</Data></Cell>
+        <Cell><Data ss:Type="String">Graduation Year</Data></Cell>
+        <Cell><Data ss:Type="String">Employer</Data></Cell>
+        <Cell><Data ss:Type="String">Job Title</Data></Cell>
+        <Cell><Data ss:Type="String">Marital Status</Data></Cell>
+        <Cell><Data ss:Type="String">LinkedIn</Data></Cell>
+        <Cell><Data ss:Type="String">Facebook</Data></Cell>
+        <Cell><Data ss:Type="String">Twitter</Data></Cell>
+        <Cell><Data ss:Type="String">Instagram</Data></Cell>
+        <Cell><Data ss:Type="String">Pinterest</Data></Cell>
+        <Cell><Data ss:Type="String">Comments</Data></Cell>
+      </Row>
+      <% @users.each do |lasso| %>
+        <Row>
+          <Cell><Data ss:type="String"><% lasso.id %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.first_name %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.last_name %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.street %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.city %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.state %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.zip_code %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.phone %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.email %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.email2 %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.major %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.pledge_class %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.pledge_class_name %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.grad_year %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.employer %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.job_title %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.marital_status %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.linkedin %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.facebook %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.twitter %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.instagram %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.pinterest %></Data></Cell>
+          <Cell><Data ss:type="String"><% lasso.comments %></Data></Cell>
+        </Row>
+        <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
 
