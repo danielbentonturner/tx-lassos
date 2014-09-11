@@ -2,12 +2,13 @@ class UserController < ApplicationController
   before_filter :authenticate_user!
   
   def initialize
-    @users = User.find(1)
-    if @users.approved == true
-      User.find(1).send_confirmation_instructions
-    else
-    puts "didnt send shit"
-    end 
+    # to be put into admin approved section
+      @users = User.find(1)
+      if @users.approved? && @users.confirmed?
+        User.find(1).send_confirmation_instructions
+      else
+        flash.now[:alert] = "Admin will approve your registration shortly"
+      end
   end
 
   def index
