@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
   #   end
   # end
 
+  # def self.approved
+  #   where(approved: true)
+  # end
+
   def self.import(file)
     spreadsheet = open_spreadsheet(file)
     header = spreadsheet.row(1)

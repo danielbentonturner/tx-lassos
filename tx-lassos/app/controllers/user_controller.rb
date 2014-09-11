@@ -1,13 +1,19 @@
 class UserController < ApplicationController
   before_filter :authenticate_user!
-
-  # def initialized
-  #   @user.skip_confirmation!
-  # end
+  
+  def initialize
+    @users = User.find(1)
+    if @users.approved == true
+      User.find(1).send_confirmation_instructions
+    else
+    puts "didnt send shit"
+    end 
+  end
 
   def index
     @users = User.all
     @user = User.find(current_user.id)
+
     # puts USER!!!
     # puts ApplicationController.current_user
     # @current_user = ApplicationController.current_user
@@ -41,7 +47,5 @@ class UserController < ApplicationController
 
   def edit
   end
-
-
 
 end
