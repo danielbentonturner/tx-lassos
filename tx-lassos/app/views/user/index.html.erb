@@ -42,7 +42,7 @@
       <div class="address">
         <h3 class="section-header">Address</h3>
         <p><%= current_user.street %></p>
-        <p><%= current_user.city %>, <%=current_user.state %> <%= current_user.zip_code %></p>
+        <p><%= current_user.city_state %></p>
       </div>
       <div class="social">
         <h3 class="section-header">Social Networking</h3>
@@ -74,9 +74,9 @@
         <p><%= current_user.comments %></p>
       </div>
       <div id="text-area">
-        <%= form_for :accounts_update do |f| %>
-          <%= f.text_area(message: @user.comments, size: "180x8") %>
-          <%= f.submit "Save", :class => "comm-save" %>
+        <%= form_tag profile_path, :method => 'put' do %>
+          <%= text_area_tag 'profile[comments]', @user.comments, size: "150x8" %>
+          <%= submit_tag "Save", :class => "comm-save" %>
         <% end %>
       </div>
 
