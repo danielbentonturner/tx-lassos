@@ -29,6 +29,7 @@ html {
 
 body {
 	height: 100%;
+	font-family: 'Lato', sans-serif;
 }
 
 #home {
@@ -72,8 +73,8 @@ input:after {
 }
 
 #nav-title {
-	font-family: 'Dancing Script', cursive;
-	font-size: 1.8em;
+	font-family: 'Lato', sans-serif;
+	font-size: 2em;
 }
 
 .sign-panel {
@@ -107,7 +108,7 @@ input:after {
 .site-footer {
 	bottom: 0px;
 	position: fixed;
-	background: #BF5700;
+	background: #F8953B;
 	text-align: center;
 	color: white;
 	width: 100%;
@@ -166,7 +167,7 @@ input:after {
 }
 
 .grav-photo {
-	border:2px solid #BF5700;
+	border:2px solid #F8953B;
 	float: left;
 }
 
@@ -174,7 +175,7 @@ input:after {
 	float: left;
 	display: inline-block;
 	height: 260px;
-	border: 2px solid #BF5700;
+	border: 2px solid #F8953B;
 	margin-left: 10px;
 	width: 37%;
 	text-align: center;
@@ -194,7 +195,7 @@ input:after {
 	margin-left: 12px;
 	background: url(rope.png) #F5F5F5;
 	background-size: 100% 100%;
-	border:2px solid #BF5700;
+	border:2px solid #F8953B;
 	display: inline-block;
 	max-width: 37%;
 	height: 260px;
@@ -207,8 +208,8 @@ input:after {
 	font-weight: bold;
 	font-style: italic;
 	text-decoration: underline;
-	color: #BF5700;
-	font-family: 'Lusitana', serif;
+	color: #F8953B;
+	font-family: 'Lato', sans-serif;
 }
 
 .wrapper {
@@ -232,7 +233,7 @@ input:after {
 
 .address, .social, .misc {
 	background: #F5F5F5;
-	border:2px solid #BF5700;
+	border:2px solid #F8953B;
 	width: 32%;
 	display: inline-block;
 	height: 180px;
@@ -260,5 +261,10 @@ input:after {
 }
 
 .comments-area {
-	border:2px solid #BF5700;
+	border:2px solid #F8953B;
+}
+
+#logo {
+	width: 30%;
+	height: 30%;
 }
