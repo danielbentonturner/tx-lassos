@@ -33,7 +33,8 @@ gem 'devise'
 # GRAVTSTIC!
 gem 'gravtastic', '~> 3.2.6'
 
-# ActiveImporter allows import of XLS files to DB
+# Roo and ActiveImporter allows import of XLS files to DB
+gem 'roo'
 gem 'active_importer'
 
 # Use unicorn as the app server

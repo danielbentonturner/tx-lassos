@@ -10,8 +10,7 @@ class ImportExportController < ApplicationController
   end
 
   def import_lassos
-    User.import(params[:file])
-    redirect_to root_url, flash: "User data imported."
+    @imported_lassos = Importer.import(Lassos.xls)
   end
 
 end

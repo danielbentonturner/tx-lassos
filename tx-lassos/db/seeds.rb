@@ -10,9 +10,7 @@ User.create([
   {
     name: 'Alix Morrow',
     street: '123 Something St.',
-    city: 'Austin',
-    state: 'Texas',
-    zip_code: '78701',
+    city_state: 'Austin, TX 78701',
     phone: '512-555-1234',
     email: 'alix@alixcompany.com',
     email2: 'alix@hotmail.com',
@@ -37,9 +35,7 @@ User.create([
   {
     name: 'Texas Girl',
     street: '888 Thing Place',
-    city: 'Austin',
-    state: 'Texas',
-    zip_code: '78704',
+    city_state: 'Austin, TX 78704',
     phone: '512-555-4321',
     email: 'girl@texas.com',
     email2: '',
@@ -63,9 +59,7 @@ User.create([
   {
     name: 'Joey G',
     street: '123 Something St.',
-    city: 'Austin',
-    state: 'Texas',
-    zip_code: '78753',
+    city_state: 'Austin, TX 78753',
     phone: '512-555-1234',
     email: 'digitaljedi@outlook.com',
     marital_status: 'Single',
@@ -89,9 +83,7 @@ User.create([
   {
     name: 'Tejas Senorita',
     street: '777 Bueno Real',
-    city: 'Austin',
-    state: 'Texas',
-    zip_code: '78757',
+    city_state: 'Austin, TX 78757',
     phone: '512-555-9999',
     email: 'senorita@tejas.com',
     email2: 'senorita@tejas.com',
