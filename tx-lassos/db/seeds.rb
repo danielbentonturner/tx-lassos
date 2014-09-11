@@ -80,7 +80,7 @@ User.create([
     instagram: 'fuck instagram',
     linkedin: 'https://www.linkedin.com/pub/alix-morrow/2/702/4aa',
     pinterest: '',
-    comments: 'These are comments. They are awesome. Hurray!',
+    comments: 'These are comments. They are awesome. Hurray! Justin licks balls!!!!! Holy balls!',
     admin: true,
     approved: true,
     password: "stuffnthings",

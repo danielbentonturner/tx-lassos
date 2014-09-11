@@ -1,9 +1,9 @@
+<script src="editProfile.js"></script>
+
 <div class="panel panel-default">
   <div class="panel-heading">
     <span class="panel-title">Welcome, <%= current_user.name %>
-      <input type="button" class="btn btn-primary pull-right edit" value="Edit"/>
-      <input type="button" class="btn btn-primary pull-right edit" value="Edit"/>
-      <input type="button" class="btn btn-primary pull-right edit" value="Edit"/>
+      <input type="button" id="main" class="btn btn-primary pull-right edit" value="Edit"/>
     </span>
   </div>
   <div class="panel-body-prof-main">
@@ -12,7 +12,7 @@
         <%= image_tag current_user.gravatar_url(:size => 256), :class => 'grav-photo' %>
       </div>
         <div class="profile-main">
-            <h2 class="section-header-top">School Info</h2>
+            <h2 class="section-header-top">Lassos Info</h2>
           <div class="school-info">
             <p><b>Pledge Class:</b> <%= current_user.pledge_class %></p>
             <p><b>Pledge Class Name:</b> <%= current_user.pledge_class_name %></p>
@@ -33,7 +33,9 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Contact Information and Social Networking</h3>
+    <span class="panel-title">Contact Information and Social Networking
+      <input type="button" id="con" class="btn btn-primary pull-right edit" value="Edit"/>
+    </span>
   </div>
   <div class="panel-body-prof-main">
     <div class="wrapper-contact">
@@ -61,12 +63,21 @@
 
 <div class="panel panel-default comments">
   <div class="panel-heading">
-    <h3 class="panel-title">Shout Out</h3>
+    <span class="panel-title">Comment
+      <!-- <input type="submit" id="comm-save" class="btn btn-warning pull-right edit" value="Save"/> -->
+      <input type="button" data-id="<%= current_user.id %>" id="comm" class="btn btn-primary pull-right edit" value="Edit"/>
+    </span>
   </div>
   <div class="panel-body-prof-main">
     <div class="wrapper-contact">
       <div class="comments-area">
         <p><%= current_user.comments %></p>
+      </div>
+      <div id="text-area">
+        <%= form_for :accounts_update do |f| %>
+          <%= f.text_area(message: @user.comments, size: "180x8") %>
+          <%= f.submit "Save", :class => "comm-save" %>
+        <% end %>
       </div>
 
 
