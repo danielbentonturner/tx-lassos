@@ -10,14 +10,33 @@ class UserController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(:id)
     unless @user == current_user
       redirect_to :back, :alert => "Access denied."
+    end
+  end
+
+  def update
+    account_update_params = devise_parameter_sanitizer.sanitize(:account_update)
+
+    # if account_update_params[:password].blank?
+    #   account_update_params.delete("password")
+    #   account_update_params.delete("password_confirmation")
+    # end
+
+    @user = User.find(current_user.id)
+    if @user.update_attributes(account_update_params)
+      set_flash_message :notice, :updated
+      sign_in @user, :bypass => true
+      redirect_to root_path
+    else
+      render "edit"
     end
   end
 
   def edit
   end
 
-end
 
+
+end

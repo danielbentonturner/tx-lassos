@@ -258,3 +258,7 @@ input:after {
 .comments {
 	margin-bottom: 60px;
 }
+
+.comments-area {
+	border:2px solid #BF5700;
+}
