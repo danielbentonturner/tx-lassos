@@ -3,10 +3,7 @@ class User < ActiveRecord::Base
   include Gravtastic
   gravtastic
 
-  def self.import(upload)
-    Spreadsheet.client_encoding = 'UTF-8'
-    book = upload['datafile'].original_filename
-    directory = "public/data"
+  def self.import
     
   end
 
