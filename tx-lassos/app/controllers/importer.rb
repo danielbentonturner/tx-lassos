@@ -1,5 +1,6 @@
 class Importer < ActiveImporter::Base
   imports User
+  sheet 'Master List'
 
   column 'Name', :name
   column 'Pledge Class', :pledge_class

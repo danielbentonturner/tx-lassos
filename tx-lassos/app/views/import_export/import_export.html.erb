@@ -1,6 +1,8 @@
-<h1>Import XLS File</h1>
-<%= start_form_tag ({:action => 'import'}, :multipart => true) %>
-<p><label for="upload_file">Select File</label> : 
-<%= file_field 'upload', 'datafile' %></p>
-<%= submit_tag "Upload" %>
-<%= end_form_tag %>
+
+
+<h2>Import Products</h2>
+<%= form_tag('/import', multipart: true) do %>
+  <%= file_field_tag(:file) %>
+  <%= submit_tag("Import") %>
+<% end %>
+
