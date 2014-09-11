@@ -1,6 +1,10 @@
 class UserController < ApplicationController
   before_filter :authenticate_user!
 
+  # def initialized
+  #   @user.skip_confirmation!
+  # end
+
   def index
     @users = User.all
     # puts USER!!!

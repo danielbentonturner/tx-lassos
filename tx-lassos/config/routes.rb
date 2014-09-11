@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :registrations => "registrations" }
+  devise_for :users
+  #, :controllers => { :registrations => "registrations" }
   get "import" => "import_export#import_lassos", :as => "import"
   get "export" => "import_export#export_lassos", :as => "export"
   root "user#index"
