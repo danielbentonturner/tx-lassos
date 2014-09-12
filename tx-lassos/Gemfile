@@ -40,8 +40,8 @@ gem 'active_importer'
 # Use unicorn as the app server
 # gem 'unicorn'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# Use better errors for deployment
+gem 'better_errors', '~> 2.0.0'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
