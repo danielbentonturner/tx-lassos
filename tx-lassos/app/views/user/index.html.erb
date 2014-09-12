@@ -39,6 +39,7 @@
   </div>
   <div class="panel-body-prof-main">
     <div class="wrapper-contact">
+      <div class="visible-social">
       <div class="address">
         <h3 class="section-header">Address</h3>
         <p><%= current_user.street %></p>
@@ -57,6 +58,46 @@
         <p><i class="fa fa-envelope"></i> <%= current_user.email %></p>
         <p><% if current_user.email2 %><i class="fa fa-envelope-o"></i> <%= current_user.email2 %> <% end %></p>
       </div>
+      </div>
+    <div class="social-form">
+      <%= form_tag profile_path, :method => 'put' do %>
+        <div class="social-form-left"> 
+          <div><%= label_tag :street %><br />
+          <%= text_field_tag 'user[street]', @user.street %></div>
+
+          <div><%= label_tag :city_state %><br />
+          <%= text_field_tag 'user[city_state]', @user.city_state %></div>
+
+          <div><%= label_tag :email %><br />
+          <%= email_field_tag 'user[email]', @user.email %></div>
+
+          <div><%= label_tag :email2 %><br />
+          <%= email_field_tag 'user[email2]', @user.email2 %></div>
+
+          <div><%= label_tag :phone %><br />
+          <%= text_field_tag 'user[phone]', @user.phone %></div>
+        </div>
+        <div class="social-form-right">
+          <div><%= label_tag :linkedin %><br />
+          <%= text_field_tag 'user[linkedin]', @user.linkedin %></div>
+
+          <div><%= label_tag :facebook %><br />
+          <%= text_field_tag 'user[facebook]', @user.facebook %></div>
+
+          <div><%= label_tag :twitter %><br />
+          <%= text_field_tag 'user[twitter]', @user.twitter %></div>
+
+          <div><%= label_tag :instagram %><br />
+          <%= text_field_tag 'user[instagram]', @user.instagram %></div>
+
+          <div><%= label_tag :pinterest %><br />
+          <%= text_field_tag 'user[pinterest]', @user.pinterest %></div>
+        </div>
+        <%= submit_tag "Save", :id => "contact-save" %>
+        <%= hidden_field_tag "user_id", current_user.id %>
+      <% end %>
+    </div>
+
     </div>
   </div>
 </div>
@@ -75,8 +116,10 @@
       </div>
       <div id="text-area">
         <%= form_tag profile_path, :method => 'put' do %>
-          <%= text_area_tag 'profile[comments]', @user.comments, size: "150x8" %>
-          <%= submit_tag "Save", :class => "comm-save" %>
+          <%= text_area_tag 'user[comments]', @user.comments, size: "150x8" %>
+          <%= submit_tag "Save", :id => "comm-save" %>
+           <%= hidden_field_tag "user_id", current_user.id %>
+          
         <% end %>
       </div>
 
