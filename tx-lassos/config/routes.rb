@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   #, :controllers => { :registrations => "registrations" }
   get "import" => "import_export#import_lassos", :as => "import"
+  post "import" => "import_export#import_lassos"
   get "export" => "import_export#export_lassos", :as => "export"
+  get '/import_export' => 'import_export#import_spreadsheet'
   root "user#index"
   # post '/' => "user#update"
   resource :profile, :only => [:update], :controller => 'user'

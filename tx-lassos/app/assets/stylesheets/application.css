@@ -268,3 +268,25 @@ input:after {
 	width: 30%;
 	height: 30%;
 }
+
+#comm-save {
+	margin-left: 50%;
+}
+
+.social-form-left {
+	float: left;
+	display: inline-block;
+	border: 2px solid #F8953B;
+	margin-left: 10px;
+	width: 37%;
+	background: #F5F5F5;
+}
+
+.social-form-right {
+	float: left;
+	display: inline-block;
+	border: 2px solid #F8953B;
+	margin-left: 10px;
+	width: 37%;
+	background: #F5F5F5;
+}
