@@ -1,16 +1,23 @@
 class UserController < ApplicationController
   before_filter :authenticate_user!
-  
-  def initialize
-    # put into admin approved section
-      @users = User.find(1)
-      if @users.approved? && @users.confirmed?
-        User.find(1).send_confirmation_instructions
-      else
-        flash.now[:alert] = "Admin will approve your registration shortly"
-      end
-  end
 
+  def create
+    @user = User.new(params[:user])
+ 
+    respond_to do |format|
+      if @user.save
+        # Tell the UserMailer to send a welcome email after save
+        UserMailer.welcome_email(@user).deliver
+ 
+        format.html { redirect_to(@user, notice: 'User was successfully created.') }
+        format.json { render json: @user, status: :created, location: @user }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  
   def index
     @users = User.all
     @user = User.find(current_user.id)
@@ -71,6 +78,24 @@ class UserController < ApplicationController
   def edit
     @user = User.find_by(:id)
     respond_to {|format| format.html}
+  end
+
+  def send_confirmation_notice
+    # put into admin approved section
+      @users = User.find(:id)
+      if @users.approved? 
+        User.find(:id).send_confirmation_instructions
+      else
+        flash.now[:alert] = "Admin will approve your registration shortly"
+      end
+  end
+
+  def select_admin
+    if @user.admin?
+      flash.now[:alert] = "this user is already an admin"
+    else
+      @user.save!(:admin => true)
+    end
   end
 
   protected
