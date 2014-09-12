@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	after_create :send_welcome_message
 
   
   include Gravtastic
@@ -10,5 +11,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
 
+  def send_welcome_message
+    UserMailer.signup_confirmation(self).deliver
+  end
 end
+
 
