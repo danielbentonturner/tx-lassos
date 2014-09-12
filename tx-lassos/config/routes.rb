@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get '/import_export' => 'import_export#import_spreadsheet'
   root "user#index"
   # post '/' => "user#update"
-  resource :profile, :only => [:update], :controller => 'user'
+  resource :profile, :controller => 'user'
+  get "/profile/:p_id" => 'user#show'
+
   
   #admin CP
   #user/ID
