@@ -1,14 +1,20 @@
 class UserController < ApplicationController
   before_filter :authenticate_user!
-  # before_filter :configure_permitted_parameters
-
-  # def initialized
-  #   @user.skip_confirmation!
-  # end
+  
+  def initialize
+    # put into admin approved section
+      @users = User.find(1)
+      if @users.approved? && @users.confirmed?
+        User.find(1).send_confirmation_instructions
+      else
+        flash.now[:alert] = "Admin will approve your registration shortly"
+      end
+  end
 
   def index
     @users = User.all
     @user = User.find(current_user.id)
+
     # puts USER!!!
     # puts ApplicationController.current_user
     # @current_user = ApplicationController.current_user
@@ -91,4 +97,5 @@ class UserController < ApplicationController
   # puts params[:profile][:comments]
   # @user.comments = params[:profile][:comments]
   # @user.save
+  
 end
