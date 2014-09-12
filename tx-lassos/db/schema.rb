@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140909154707) do
+ActiveRecord::Schema.define(version: 20140911220540) do
+
+  create_table "pendings", force: true do |t|
+    t.string   "name"
+    t.string   "pledge_class"
+    t.string   "pledge_class_name"
+    t.string   "grad_year"
+    t.string   "major"
+    t.string   "street"
+    t.string   "city_state"
+    t.string   "email"
+    t.string   "email2"
+    t.string   "phone"
+    t.string   "employer"
+    t.string   "job_title"
+    t.string   "comments"
+    t.boolean  "pending"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
