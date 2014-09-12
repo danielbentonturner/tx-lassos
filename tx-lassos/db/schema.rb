@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140911220540) do
+ActiveRecord::Schema.define(version: 20140912164318) do
+
+  create_table "emails", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pendings", force: true do |t|
     t.string   "name"
@@ -19,15 +24,19 @@ ActiveRecord::Schema.define(version: 20140911220540) do
     t.string   "pledge_class_name"
     t.string   "grad_year"
     t.string   "major"
-    t.string   "street"
+    t.string   "street_address"
     t.string   "city_state"
     t.string   "email"
     t.string   "email2"
     t.string   "phone"
+    t.string   "other_phone"
     t.string   "employer"
     t.string   "job_title"
     t.string   "comments"
-    t.boolean  "pending"
+    t.string   "perm_address1"
+    t.string   "perm_address2"
+    t.boolean  "pending",           default: true
+    t.boolean  "approved",          default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resource :pending
   #, :controllers => { :registrations => "registrations" }
   get "import" => "import_export#import_lassos", :as => "import"
   post "import" => "import_export#import_lassos"
@@ -7,7 +8,11 @@ Rails.application.routes.draw do
   get '/import_export' => 'import_export#import_spreadsheet'
   root "user#index"
   # post '/' => "user#update"
-  resource :profile, :only => [:update], :controller => 'user'
+  resource :profile, :controller => 'user'
+  
+  #admin CP
+  #user/ID
+
   # resources :user
   # resources :sessions
   # The priority is based upon order of creation: first created -> highest priority.
