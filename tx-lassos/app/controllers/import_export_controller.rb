@@ -9,7 +9,7 @@ class ImportExportController < ApplicationController
   end
 
   def import_lassos
-    Importer.import(params[:file].tempfile.path)
+    Pending.import(params[:file].tempfile.path)
     redirect_to root_path, flash: "Spreadsheet imported."
   end
 
