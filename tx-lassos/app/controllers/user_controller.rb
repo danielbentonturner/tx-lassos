@@ -1,23 +1,16 @@
 class UserController < ApplicationController
   before_filter :authenticate_user!
-
-  def create
-    @user = User.new(params[:user])
- 
-    respond_to do |format|
-      if @user.save
-        # Tell the UserMailer to send a welcome email after save
-        UserMailer.welcome_email(@user).deliver
- 
-        format.html { redirect_to(@user, notice: 'User was successfully created.') }
-        format.json { render json: @user, status: :created, location: @user }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
-  end
   
+  # def initialize
+  #   # put into admin approved section
+  #     @users = User.find(1)
+  #     if @users.approved? && @users.confirmed?
+  #       User.find(1).send_confirmation_instructions
+  #     else
+  #       flash.now[:alert] = "Admin will approve your registration shortly"
+  #     end
+  # end
+
   def index
     @users = User.all
     @user = User.find(current_user.id)
