@@ -36,6 +36,7 @@ gem 'gravtastic', '~> 3.2.6'
 # Roo and ActiveImporter allows import of XLS files to DB
 gem 'roo'
 gem 'active_importer'
+# gem 'google_drive'
 
 # Use unicorn as the app server
 # gem 'unicorn'

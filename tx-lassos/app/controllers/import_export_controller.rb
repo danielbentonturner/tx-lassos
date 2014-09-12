@@ -9,8 +9,12 @@ class ImportExportController < ApplicationController
   end
 
   def import_lassos
-    Importer.import(params[:file])
-    redirect_to root_url, flash: "Spreadsheet imported."
+    Importer.import(params[:file].tempfile.path)
+    redirect_to root_path, flash: "Spreadsheet imported."
+  end
+
+  def import_spreadsheet
+    render 'import_export.html.erb' 
   end
 
 end
