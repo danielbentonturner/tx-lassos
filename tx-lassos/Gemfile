@@ -36,7 +36,7 @@ gem 'gravtastic', '~> 3.2.6'
 # Roo and ActiveImporter allows import of XLS files to DB
 gem 'roo'
 gem 'active_importer'
-gem 'pry-byebug'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
@@ -46,3 +46,4 @@ gem 'pry-byebug'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'pry-byebug'
