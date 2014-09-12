@@ -1,0 +1,75 @@
+<script src="editProfile.js"></script>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <span class="panel-title"><%= @user.name %>
+    </span>
+  </div>
+  <div class="panel-body-prof-main">
+    <div class="wrapper">
+      <div class="grav-div">
+        <%= image_tag @user.gravatar_url(:size => 256), :class => 'grav-photo' %>
+      </div>
+      <div class="main-wrapper">
+        <div class="profile-main">
+          <h2 class="section-header-top">Lassos Info</h2>
+          <div class="school-info">
+            <p><b>Pledge Class:</b> <%= @user.pledge_class %></p>
+            <p><b>Pledge Class Name:</b> <%= @user.pledge_class_name %></p>
+            <p><b>Graduation Year:</b> <%= @user.grad_year %></p>
+            <p><b>Major:</b> <%= @user.major %></p>
+          </div>
+        </div>
+        <div class="professional">
+          <h2 class="section-header-top">Professional</h2>
+          <div class="pro-sub">
+            <p><b>Employer: </b><%= @user.employer %></p>
+            <p><b>Postition: </b><%= @user.job_title %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <span class="panel-title">Contact Information
+    </span>
+  </div>
+  <div class="panel-body-prof-main">
+    <div class="wrapper-contact">
+      <div class="visible-social">
+        <div class="address">
+          <h3 class="section-header">Address</h3>
+          <p><%= @user.street %></p>
+          <p><%= @user.city_state %></p>
+        </div>
+        <div class="social">
+          <h3 class="section-header">Social Networking</h3>
+          <p><% if @user.facebook != "" %><i class="fa fa-facebook"></i> <%= @user.facebook %><% end %></p>
+          <p><% if @user.twitter != "" %><i class="fa fa-twitter"></i> <%= @user.twitter %><% end %></p>
+          <p><% if @user.instagram != "" %><i class="fa fa-instagram"></i> <%= @user.instagram %><% end %></p>
+          <p><% if @user.pinterest != "" %><i class="fa fa-pinterest"></i> <%= @user.pinterest %><% end %></p>
+        </div>
+        <div class="misc">
+          <h3 class="section-header">Contact</h3>
+          <p><i class="fa fa-phone"></i></i> <%= @user.phone %></p>
+          <p><i class="fa fa-envelope"></i> <%= @user.email %></p>
+          <p><% if @user.email2 %><i class="fa fa-envelope-o"></i> <%= @user.email2 %> <% end %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel panel-default comments">
+  <div class="panel-heading">
+    <span class="panel-title">Comment
+    </span>
+  </div>
+  <div class="panel-body-prof-main">
+    <div class="wrapper-contact">
+      <div class="comments-area">
+        <p><%= @user.comments %></p>
+      </div>
+    </div>
+  </div>
+</div>

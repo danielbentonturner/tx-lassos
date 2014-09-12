@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root "user#index"
   # post '/' => "user#update"
   resource :profile, :controller => 'user'
+  get "/profile/:p_id" => 'user#show'
   
   #admin CP
   #user/ID

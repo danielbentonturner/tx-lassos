@@ -30,6 +30,7 @@ html {
 body {
 	height: 100%;
 	font-family: 'Lato', sans-serif;
+	background: #cbeefc;
 }
 
 #home {
@@ -300,9 +301,13 @@ input:after {
 	margin: 24px 5px 3px 0px;
 }
 
+.edit {
+	margin: 0 0 4px 4px;
+}
+
 
 /* Smartphones (portrait and landscape) ----------- */
-@media (max-width : 1184px) {
+@media (max-width : 1200px) {
 /* Styles */
 	.wrapper, .wrapper-contact {
 		height: auto;
