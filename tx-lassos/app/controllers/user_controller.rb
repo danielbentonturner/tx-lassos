@@ -16,6 +16,10 @@ class UserController < ApplicationController
     @user = User.find(current_user.id)
   end
 
+  def view_profile
+    @user = User.find(params[:user_id])
+  end
+
   def show
     # binding.pry
     @user = User.find(params[:p_id])
