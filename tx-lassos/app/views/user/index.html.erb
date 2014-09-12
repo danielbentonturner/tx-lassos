@@ -1,9 +1,8 @@
 <script src="editProfile.js"></script>
-
 <div class="panel panel-default">
   <div class="panel-heading">
     <span class="panel-title">Welcome, <%= current_user.name %>
-      <input type="button" id="main" class="btn btn-primary pull-right edit" value="Edit"/>
+    <input type="button" id="main" class="btn btn-primary pull-right edit" value="Edit"/>
     </span>
   </div>
   <div class="panel-body-prof-main">
@@ -11,8 +10,9 @@
       <div class="grav-div">
         <%= image_tag current_user.gravatar_url(:size => 256), :class => 'grav-photo' %>
       </div>
+      <div class="main-wrapper">
         <div class="profile-main">
-            <h2 class="section-header-top">Lassos Info</h2>
+          <h2 class="section-header-top">Lassos Info</h2>
           <div class="school-info">
             <p><b>Pledge Class:</b> <%= current_user.pledge_class %></p>
             <p><b>Pledge Class Name:</b> <%= current_user.pledge_class_name %></p>
@@ -23,90 +23,106 @@
         <div class="professional">
           <h2 class="section-header-top">Professional</h2>
           <div class="pro-sub">
-            <p><b>Employer: </b><%= current_user.employer %></p> 
-            <p><b>Postition: </b><%= current_user.job_title %></p> 
+            <p><b>Employer: </b><%= current_user.employer %></p>
+            <p><b>Postition: </b><%= current_user.job_title %></p>
           </div>
         </div>
       </div>
+      <div class="top-form">
+        <%= form_tag profile_path, :method => 'put' do %>
+        <div class="alum-form-left">
+          <div><%= label_tag :name, nil, :class => "name-butt" %><br />
+          <%= text_field_tag 'user[name]', @user.name %></div>
+          <div><%= label_tag :major %><br />
+          <%= text_field_tag 'user[major]', @user.major %></div>
+          <div><%= label_tag :pledge_class %><br />
+          <%= text_field_tag 'user[pledge_class]', @user.pledge_class %></div>
+          <div><%= label_tag :pledge_class_name %><br />
+          <%= text_field_tag 'user[pledge_class_name]', @user.pledge_class_name %></div>
+          <div><%= label_tag :grad_year %><br />
+          <%= text_field_tag 'user[grad_year]', @user.grad_year %></div>
+        </div>
+        <div class="pro-form-right">
+          <div><%= label_tag :employer, nil, :class => "emp-butt" %><br />
+          <%= text_field_tag 'user[employer]', @user.employer %></div>
+          <div><%= label_tag :job_title %><br />
+          <%= text_field_tag 'user[job_title]', @user.job_title %></div>
+        </div>
+        <%= submit_tag "Save", :id => "info-save", :class => "btn btn-primary" %>
+        <%= hidden_field_tag "user_id", current_user.id %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
-
 <div class="panel panel-default">
   <div class="panel-heading">
-    <span class="panel-title">Contact Information and Social Networking
-      <input type="button" id="con" class="btn btn-primary pull-right edit" value="Edit"/>
+    <span class="panel-title">Contact Information
+    <input type="button" id="con" class="btn btn-primary pull-right edit" value="Edit"/>
     </span>
   </div>
   <div class="panel-body-prof-main">
     <div class="wrapper-contact">
       <div class="visible-social">
-      <div class="address">
-        <h3 class="section-header">Address</h3>
-        <p><%= current_user.street %></p>
-        <p><%= current_user.city_state %></p>
+        <div class="address">
+          <h3 class="section-header">Address</h3>
+          <p><%= current_user.street %></p>
+          <p><%= current_user.city_state %></p>
+        </div>
+        <div class="social">
+          <h3 class="section-header">Social Networking</h3>
+          <p><% if current_user.facebook != "" %><i class="fa fa-facebook"></i> <%= current_user.facebook %><% end %></p>
+          <p><% if current_user.twitter != "" %><i class="fa fa-twitter"></i> <%= current_user.twitter %><% end %></p>
+          <p><% if current_user.instagram != "" %><i class="fa fa-instagram"></i> <%= current_user.instagram %><% end %></p>
+          <p><% if current_user.pinterest != "" %><i class="fa fa-pinterest"></i> <%= current_user.pinterest %><% end %></p>
+        </div>
+        <div class="misc">
+          <h3 class="section-header">Contact</h3>
+          <p><i class="fa fa-phone"></i></i> <%= current_user.phone %></p>
+          <p><i class="fa fa-envelope"></i> <%= current_user.email %></p>
+          <p><% if current_user.email2 %><i class="fa fa-envelope-o"></i> <%= current_user.email2 %> <% end %></p>
+        </div>
       </div>
-      <div class="social">
-        <h3 class="section-header">Social Networking</h3>
-        <p><% if current_user.facebook != "" %><i class="fa fa-facebook"></i> <%= current_user.facebook %><% end %></p>
-        <p><% if current_user.twitter != "" %><i class="fa fa-twitter"></i> <%= current_user.twitter %><% end %></p>
-        <p><% if current_user.instagram != "" %><i class="fa fa-instagram"></i> <%= current_user.instagram %><% end %></p>
-        <p><% if current_user.pinterest != "" %><i class="fa fa-pinterest"></i> <%= current_user.pinterest %><% end %></p>
-      </div>
-      <div class="misc">
-        <h3 class="section-header">Contact</h3>
-        <p><i class="fa fa-phone"></i></i> <%= current_user.phone %></p>
-        <p><i class="fa fa-envelope"></i> <%= current_user.email %></p>
-        <p><% if current_user.email2 %><i class="fa fa-envelope-o"></i> <%= current_user.email2 %> <% end %></p>
-      </div>
-      </div>
-    <div class="social-form">
-      <%= form_tag profile_path, :method => 'put' do %>
-        <div class="social-form-left"> 
-          <div><%= label_tag :street %><br />
+      <div class="social-form">
+        <%= form_tag profile_path, :method => 'put' do %>
+        <div class="social-form-left">
+          <div><%= label_tag :street, nil, :class => "street-butt" %><br />
           <%= text_field_tag 'user[street]', @user.street %></div>
-
           <div><%= label_tag :city_state %><br />
           <%= text_field_tag 'user[city_state]', @user.city_state %></div>
-
           <div><%= label_tag :email %><br />
           <%= email_field_tag 'user[email]', @user.email %></div>
-
           <div><%= label_tag :email2 %><br />
           <%= email_field_tag 'user[email2]', @user.email2 %></div>
-
           <div><%= label_tag :phone %><br />
           <%= text_field_tag 'user[phone]', @user.phone %></div>
         </div>
         <div class="social-form-right">
-          <div><%= label_tag :linkedin %><br />
+          <div><%= label_tag :linkedin, nil, :class => "linked-butt" %><br />
           <%= text_field_tag 'user[linkedin]', @user.linkedin %></div>
-
           <div><%= label_tag :facebook %><br />
           <%= text_field_tag 'user[facebook]', @user.facebook %></div>
-
           <div><%= label_tag :twitter %><br />
           <%= text_field_tag 'user[twitter]', @user.twitter %></div>
-
           <div><%= label_tag :instagram %><br />
           <%= text_field_tag 'user[instagram]', @user.instagram %></div>
-
           <div><%= label_tag :pinterest %><br />
           <%= text_field_tag 'user[pinterest]', @user.pinterest %></div>
+          <div><%= label_tag :marital_status %><br />
+          <%= text_field_tag 'user[marital_status]', @user.marital_status %></div>
         </div>
-        <%= submit_tag "Save", :id => "contact-save" %>
+        <%= submit_tag "Save", :id => "contact-save", :class => "btn btn-primary" %>
         <%= hidden_field_tag "user_id", current_user.id %>
-      <% end %>
-    </div>
-
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-
 <div class="panel panel-default comments">
   <div class="panel-heading">
     <span class="panel-title">Comment
-      <!-- <input type="submit" id="comm-save" class="btn btn-warning pull-right edit" value="Save"/> -->
-      <input type="button" data-id="<%= current_user.id %>" id="comm" class="btn btn-primary pull-right edit" value="Edit"/>
+    <!-- <input type="submit" id="comm-save" class="btn btn-warning pull-right edit" value="Save"/> -->
+    <input type="button" data-id="<%= current_user.id %>" id="comm" class="btn btn-primary pull-right edit" value="Edit"/>
     </span>
   </div>
   <div class="panel-body-prof-main">
@@ -116,14 +132,12 @@
       </div>
       <div id="text-area">
         <%= form_tag profile_path, :method => 'put' do %>
-          <%= text_area_tag 'user[comments]', @user.comments, size: "150x8" %>
-          <%= submit_tag "Save", :id => "comm-save" %>
-           <%= hidden_field_tag "user_id", current_user.id %>
-          
+        <%= text_area_tag 'user[comments]', @user.comments, size: "150x8", :class => 'txtarea' %>
+        <%= submit_tag "Save", :id => "comm-save", :class => "btn btn-primary" %>
+        <%= hidden_field_tag "user_id", current_user.id %>
+        
         <% end %>
       </div>
-
-
     </div>
   </div>
 </div>
