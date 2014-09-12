@@ -15,6 +15,7 @@ class CreatePendings < ActiveRecord::Migration
       t.string :job_title
       t.string :comments
       t.boolean :pending, default: true
+      t.boolean :approved, default: false
       t.timestamps
     end
   end

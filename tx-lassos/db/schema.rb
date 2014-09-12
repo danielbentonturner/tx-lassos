@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140911220540) do
+ActiveRecord::Schema.define(version: 20140912164318) do
+
+  create_table "emails", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pendings", force: true do |t|
     t.string   "name"
@@ -27,7 +32,8 @@ ActiveRecord::Schema.define(version: 20140911220540) do
     t.string   "employer"
     t.string   "job_title"
     t.string   "comments"
-    t.boolean  "pending"
+    t.boolean  "pending",           default: true
+    t.boolean  "approved",          default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
