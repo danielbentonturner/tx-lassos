@@ -2,13 +2,13 @@ class UserController < ApplicationController
   before_filter :authenticate_user!
   
   # def initialize
-  #   # put into admin approved section
-  #     @users = User.find(1)
-  #     if @users.approved? && @users.confirmed?
-  #       User.find(1).send_confirmation_instructions
-  #     else
-  #       flash.now[:alert] = "Admin will approve your registration shortly"
-  #     end
+    # put into admin approved section
+      # @users = User.find(1)
+      # if @users.approved? && @users.confirmed?
+      #   User.find(1).send_confirmation_instructions
+      # else
+      #   flash.now[:alert] = "Admin will approve your registration shortly"
+      # end
   # end
 
   def index
@@ -40,7 +40,7 @@ class UserController < ApplicationController
     # params[:user][:comments] ? @user.comments = params[:user][:comments] : @user.comments = @user.comments
 
     # @user.comments = params[:user][:comments]
-    @user.update(params['user'].permit(:name, :email, :email2, :street, :city, :state, :zip_code, :phone, :email, :marital_status, :major, :pledge_class, :pledge_class_name, :grad_year, :employer, :job_title, :facebook, :twitter, :instagram, :linkedin, :pinterest, :comments))
+    @user.update(user_params)
 
     @user.save!(:validate => false)
     # @user.
@@ -93,9 +93,9 @@ class UserController < ApplicationController
 
   protected
 
-  # def user_params
-  #   params.require(:user).permit(:name, :email, :email2, :street, :city, :state, :zip_code, :phone, :email, :marital_status, :major, :pledge_class, :pledge_class_name, :grad_year, :employer, :job_title, :facebook, :twitter, :instagram, :linkedin, :pinterest, :comments)
-  # end
+  def user_params
+    params.require(:user).permit(:name, :email, :email2, :street, :city_state, :phone, :email, :marital_status, :major, :pledge_class, :pledge_class_name, :grad_year, :employer, :job_title, :facebook, :twitter, :instagram, :linkedin, :pinterest, :comments)
+  end
 
   # def comment_params
 

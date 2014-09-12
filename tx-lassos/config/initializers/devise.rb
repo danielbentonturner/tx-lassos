@@ -109,7 +109,6 @@ Devise.setup do |config|
   #DEBUG SETTING, DO NOT LEAVE AS NIL
   config.allow_unconfirmed_access_for = nil
 
-
   # A period that the user is allowed to confirm their account before their
   # token becomes invalid. For example, if set to 3.days, the user can confirm
   # their account within 3 days after the mail was sent, but on the fourth day

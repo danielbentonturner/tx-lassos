@@ -13,11 +13,11 @@
  *= require_tree .
  *= require_self
  */
-/*
+
  *, *:before, *:after {
  	box-sizing: border-box;
- 	border: 2px solid red;
- }*/
+ 	/*border: 2px solid red;*/
+ }
 
 * {
   margin: 0;
@@ -122,10 +122,11 @@ input:after {
 	text-align: center;
 	float: none;
 	clear: both;
+	margin: 0;
 }
 
 .remember {
-
+	margin: 2% 0 0 18%;
 
 }
 
@@ -273,7 +274,7 @@ input:after {
 	margin-left: 50%;
 }
 
-.social-form-left {
+.social-form-left, .alum-form-left {
 	float: left;
 	display: inline-block;
 	border: 2px solid #F8953B;
@@ -282,11 +283,130 @@ input:after {
 	background: #F5F5F5;
 }
 
-.social-form-right {
+.social-form-right, .pro-form-right {
 	float: left;
 	display: inline-block;
 	border: 2px solid #F8953B;
 	margin-left: 10px;
 	width: 37%;
 	background: #F5F5F5;
+}
+
+#contact-save, #info-save {
+	margin: 2%;
+}
+
+.resend-email-label, .modal-name, .name-butt, .linked-butt, .street-butt, .emp-butt {
+	margin: 24px 5px 3px 0px;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media (max-width : 1184px) {
+/* Styles */
+	.wrapper, .wrapper-contact {
+		height: auto;
+	}
+	.main-wrapper {
+
+	}
+	.profile-main, .professional, .address, .social, .misc, .visible-social {
+		height: auto;
+		width: 100%;
+		float: none;
+		display: block;
+		margin-left: 0;
+		margin-top: 5px;
+		background: #F5F5F5;
+		text-align: center;
+		position: relative;
+	} 
+
+/*	.pro-form-right, .alum-form-left, .social-form-left, .social-form-right {
+		overflow: auto;
+		position: relative;
+		clear: both;
+		margin: 0 auto;
+	}*/
+
+	.school-info {
+
+	}
+	.professional {
+		max-width: 100%;
+	}
+
+	.panel-body-prof-main {
+		height: auto;
+		padding: 0;
+	}
+
+	.grav-photo {
+		float: none;
+		margin: 5px 0 0 0;
+	}
+
+	.school-info, .pro-sub {
+		margin: 0 auto;
+	}
+
+	.section-header-top {
+		text-decoration: none;
+		margin: 0;
+		padding: 0;
+		top; 1;
+	}
+
+	.top-form, .social-form {
+	  position: absolute;
+	  top: 20px;
+	  left: 0;
+	  z-index: 9998;
+	  background: black;
+	  color: white;
+	  height: auto;
+	  -webkit-transition-duration: 0.5s;
+	  -moz-transition-duration: 0.5s;
+	  -o-transition-duration: 0.5s;
+	  transition-duration: 0.5s;
+	}
+
+	.pro-form-right, .alum-form-left, .social-form-right, .social-form-left {
+	  /*position: relative;*/
+	  /*top: 40px;*/
+	  /*left: -250px;*/
+	  z-index: 9998;
+	  background: black;
+	  color: white;
+	  width: 100%;
+	  height: auto;
+	  clear: both;
+	  -webkit-transition-duration: 0.5s;
+	  -moz-transition-duration: 0.5s;
+	  -o-transition-duration: 0.5s;
+	  transition-duration: 0.5s;
+	}
+
+	.txtarea {
+		width: 100%;
+	}
+
+/*	.top-form:hover {
+	  left: 250px;
+	}*/
+/*	.top-form:hover .pro-form-right {
+	  left: 0;
+	}
+
+	.top-form:hover .alum-form-left {
+	  left: 0;
+	}
+
+	.social-form:hover .social-form-right {
+		left: 0;
+	}
+
+	.social-form:hover .social-form-left {
+		left: 0;
+	}*/
 }
