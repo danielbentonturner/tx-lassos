@@ -2,7 +2,7 @@ class UserController < ApplicationController
   before_filter :authenticate_user!
   
   def initialize
-    # to be put into admin approved section
+    # put into admin approved section
       @users = User.find(1)
       if @users.approved? && @users.confirmed?
         User.find(1).send_confirmation_instructions
