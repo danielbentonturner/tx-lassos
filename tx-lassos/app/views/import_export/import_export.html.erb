@@ -1,13 +1,4 @@
 
-
-<h2>Import Products</h2>
-<%= form_tag('/import', multipart: true) do %>
-  <%= file_field_tag(:file) %>
-  <%= submit_tag("Import") %>
-<% end %>
-
-
-
 <div class="panel panel-default sign-div">
   <div class="panel-heading">
     <h3 class="panel-title">Import CSV File to Pending Database</h3>
@@ -18,10 +9,16 @@
 
 
 <h2>Import Products</h2>
+<br />
+<br />
+<div class="import-form">
 <%= form_tag('/import', multipart: true) do %>
   <%= file_field_tag(:file) %>
   <%= submit_tag("Import") %>
 <% end %>
+</div>
+<br />
+<br />
 
 
 	   </div>
