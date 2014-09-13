@@ -1,4 +1,8 @@
-class ImportExportController < ApplicationController
+class AdminController < ApplicationController
+
+  def index
+
+  end
 
   def export_lassos
     @users = User.all
@@ -11,10 +15,6 @@ class ImportExportController < ApplicationController
   def import_lassos
     Pending.import(params[:file].tempfile.path)
     redirect_to root_path, :alert => "Spreadsheet imported."
-  end
-
-  def import_spreadsheet
-    render 'import_export.html.erb' 
   end
 
 end

@@ -1,17 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
   resource :pending
+  resource :admin
   #, :controllers => { :registrations => "registrations" }
-  get "import" => "import_export#import_lassos", :as => "import"
-  post "import" => "import_export#import_lassos"
-  get "export" => "import_export#export_lassos", :as => "export"
-  get '/import_export' => 'import_export#import_spreadsheet'
+  # get '/admin' => 'admin#index'
   root "user#index"
   # post '/' => "user#update"
   resource :profile, :controller => 'user'
   get "/profile/:p_id" => 'user#show'
   get "/find" => 'user#find'
-  
+
   #admin CP
   #user/ID
 
