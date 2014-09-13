@@ -6,4 +6,8 @@ class Pending < ActiveRecord::Base
     end
   end
 
+  def need_approval?
+  	@potentials = Pending.where(pending: true, approved: false)
+  end
+
 end

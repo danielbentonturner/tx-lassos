@@ -48,24 +48,6 @@ class UserController < ApplicationController
     respond_to {|format| format.html}
   end
 
-  def send_confirmation_notice
-    # put into admin approved section
-      @users = User.find(:id)
-      if @users.approved? 
-        User.find(:id).send_confirmation_instructions
-      else
-        flash.now[:alert] = "Admin will approve your registration shortly"
-      end
-  end
-
-  def select_admin
-    if @user.admin?
-      flash.now[:alert] = "this user is already an admin"
-    else
-      @user.save!(:admin => true)
-    end
-  end
-
   protected
 
   def user_params

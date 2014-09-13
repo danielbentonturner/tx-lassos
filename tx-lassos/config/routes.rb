@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   resource :pending
-  resource :admin
   #, :controllers => { :registrations => "registrations" }
-  # get '/admin' => 'admin#index'
+  get '/admin' => 'admin#index'
   root "user#index"
   # post '/' => "user#update"
   resource :profile, :controller => 'user'

@@ -21,6 +21,22 @@
   </div>
 </div>
 
+<center>
+  <h2>Pending Approvals</h2>
+  <table>
+  <tr>
+    <th>Name</th>
+    <th>Pledge Class</th>
+    <th>Email</th>
+  </tr>
+
+    <% @approval_list.each do |pending_user| %>
+      <button <% THIS CALLS approve_user with a user object %> >Approve</button>
+      <td><%= pending_user.name %></td>
+      <td><%= pending_user.pledge_class %></td>
+      <td><%= pending_user.email %></td>
+    <% end %>
+
 <script type="text/javascript">
 $(".sign-panel").find("a").hide();
 $(".mod-submit").find('input[name=commit]').addClass("btn btn-primary btn3d center-forgot");
