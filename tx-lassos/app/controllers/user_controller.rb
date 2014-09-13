@@ -1,5 +1,6 @@
 class UserController < ApplicationController
   before_filter :authenticate_user!
+
   
   # def initializezzz
     # put into admin approved section
@@ -14,6 +15,13 @@ class UserController < ApplicationController
   def index
     @users = User.all
     @user = User.find(current_user.id)
+    # if params[:search]
+    #    @searched_users = User.search(params[:search]).order("created_at DESC")
+    #    @searched_users
+    #  else
+    #    @searched_users = User.all.order('created_at DESC')
+    #    @searched_users
+    #  end
   end
 
   def view_profile
@@ -29,6 +37,10 @@ class UserController < ApplicationController
     render file: 'profile/index'
   end
 
+  def self.search(query)
+    where("email like ?", "%#{query}%")
+  end
+
   def update
     @user = User.find(params[:user_id])
     @user.update(user_params)
@@ -39,8 +51,18 @@ class UserController < ApplicationController
 
   def find
     @users = User.all
+    @pledge_class = User.pledge_class
+    @pledge_class_name = User.pledge_class_name
+    @grad_year = User.grad_year
+    if params[:search]
+       @searched_users = User.find(params[:search])
+       @searched_users
+     else
+       @searched_users = User.all.order('created_at DESC')
+       @searched_users.name
+     end
     # find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-    render 'user/find'
+    # render find_path
   end
 
   def edit
