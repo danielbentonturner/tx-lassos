@@ -6,8 +6,12 @@ class Pending < ActiveRecord::Base
     end
   end
 
-  def need_approval?
-  	@potentials = Pending.where(pending: true, approved: false)
+  def need_approval
+    Pending.where(pending: true, approved: false)
+  end
+
+  def convert_pending_to_user(new_user)
+    User.create!()
   end
 
 end

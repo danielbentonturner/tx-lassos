@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   resource :pending
   #, :controllers => { :registrations => "registrations" }
-  get '/admin' => 'admin#index'
+  get '/admin' => 'pending#index'
+  get "import" => "pending#import_users", :as => "import"
+  post "import" => "pending#import_users"
+  get 'export' => 'pending#export_users'
   root "user#index"
   # post '/' => "user#update"
   resource :profile, :controller => 'user'

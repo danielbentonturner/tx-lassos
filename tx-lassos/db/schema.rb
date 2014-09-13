@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20140911220540) do
     t.string   "comments"
     t.string   "perm_address1"
     t.string   "perm_address2"
-    t.boolean  "pending",           default: true
+    t.boolean  "pending",           default: false
     t.boolean  "approved",          default: false
     t.datetime "created_at"
     t.datetime "updated_at"

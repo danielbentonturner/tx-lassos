@@ -48,6 +48,21 @@ class UserController < ApplicationController
     respond_to {|format| format.html}
   end
 
+  def send_confirmation_notice_to_admin
+    @admin = User.where(admin: true)
+    @admin_emails = @admin.map { |x| x.email }
+    @admin_emails.each { |x| x.send_confirmation_instructions }
+    flash.notice = "An administrator will approve your registration shortly."
+  end 
+
+  def select_admin
+    if @user.admin?
+      flash.alert = "This user is already an administrator."
+    else
+      @user.save!(:admin => true)
+    end
+  end
+
   protected
 
   def user_params
