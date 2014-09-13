@@ -14,5 +14,4 @@ class Pending < ActiveRecord::Base
     User.create!()
   end
 
-
 end
