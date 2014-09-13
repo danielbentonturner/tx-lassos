@@ -11,12 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140912164318) do
-
-  create_table "emails", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20140911220540) do
 
   create_table "pendings", force: true do |t|
     t.string   "name"
@@ -35,7 +30,7 @@ ActiveRecord::Schema.define(version: 20140912164318) do
     t.string   "comments"
     t.string   "perm_address1"
     t.string   "perm_address2"
-    t.boolean  "pending",           default: true
+    t.boolean  "pending",           default: false
     t.boolean  "approved",          default: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -78,6 +73,9 @@ ActiveRecord::Schema.define(version: 20140912164318) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.integer  "failed_attempts",        default: 0,     null: false
+    t.string   "unlock_token"
+    t.datetime "locked_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
