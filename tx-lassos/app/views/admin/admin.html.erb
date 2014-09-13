@@ -1,0 +1,27 @@
+<h1>Admin</h1>
+
+<h2>Export</h2>
+<p>
+  <%= link_to "Excel", products_path(format: "xls") %>
+</p>
+
+<div class="panel panel-default sign-div">
+  <div class="panel-heading">
+    <h3 class="panel-title">Import CSV File to Pending Database</h3>
+  </div>
+  <div class="panel-body">
+    <div class="sign-panel">
+      <br />
+      <h2>Import Lassos</h2>
+      <%= form_tag('/import', multipart: true) do %>
+        <%= file_field_tag(:file) %>
+        <%= submit_tag("Import") %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(".sign-panel").find("a").hide();
+$(".mod-submit").find('input[name=commit]').addClass("btn btn-primary btn3d center-forgot");
+</script>
