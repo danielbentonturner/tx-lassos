@@ -14,10 +14,10 @@
  *= require_self
  */
 
- *, *:before, *:after {
+/* *, *:before, *:after {
  	box-sizing: border-box;
- 	/*border: 2px solid red;*/
- }
+ 	border: 2px solid red;
+ }*/
 
 * {
   margin: 0;
@@ -303,6 +303,17 @@ input:after {
 
 .edit {
 	margin: 0 0 4px 4px;
+}
+
+.import-form {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.asterick {
+	margin-top: 10px;
+	font-style: italic;
+	color: red;
 }
 
 

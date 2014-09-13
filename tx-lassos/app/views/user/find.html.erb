@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<span class="panel-title">Search
+		</span>
+	</div>
+	<div class="panel-body-prof-main">
+		<div class="wrapper">
+			<h2>Find Another Aluma</h2>
+			<div class="search area">
+				
+
+				<% form_tag '/find', :method => 'get' do %>
+				  <p>
+				    <%= text_field_tag :search, params[:search] %>
+				    <%= submit_tag "Search", :name => nil %>
+				  </p>
+				<% end %>
+				fuck you
+
+
+
+
+			</div>
+		</div>
+	</div>
+</div>

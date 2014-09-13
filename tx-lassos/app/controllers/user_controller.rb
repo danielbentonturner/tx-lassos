@@ -37,6 +37,12 @@ class UserController < ApplicationController
     redirect_to root_path
   end
 
+  def find
+    @users = User.all
+    # find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+    render 'user/find'
+  end
+
   def edit
     @user = User.find_by(:id)
     respond_to {|format| format.html}
