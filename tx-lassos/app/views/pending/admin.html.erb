@@ -2,7 +2,7 @@
 
 <h2>Export</h2>
 <p>
-  <%= link_to "Excel", products_path(format: "xls") %>
+  <%= link_to "Excel", export_path(format: "xls") %>
 </p>
 
 <div class="panel panel-default sign-div">
@@ -20,6 +20,14 @@
     </div>
   </div>
 </div>
+
+<h2>Pending Approvals</h2>
+  <% @approval_list.each do |pending_user| %>
+    <button <% THIS CALLS approve_user with a user object %> >Approve</button>
+    <%= pending_user.name %>
+    <%= pending_user.pledge_class %>
+    <%= pending_user.email %>
+  <% end %>
 
 <script type="text/javascript">
 $(".sign-panel").find("a").hide();
