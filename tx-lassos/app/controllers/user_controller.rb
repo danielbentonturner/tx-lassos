@@ -38,7 +38,10 @@ class UserController < ApplicationController
   end
 
   def self.search(query)
-    where("email like ?", "%#{query}%")
+    # where("email like ?", "%#{query}%")
+    # return scoped unless title.present? || company.present? || location_id.present?
+    # where(['title LIKE ? AND company LIKE ? AND location_id = ?', "%#{title}%", "%#{company}%", "%#{location_id}%"])
+    User.find(:all, :conditions => ["name LIKE %?%", params[:user][:name]])
   end
 
   def update
@@ -50,17 +53,21 @@ class UserController < ApplicationController
   end
 
   def find
-    @users = User.all
+    @search = Search.new(User, params[:search])
+    # @search.order = 'email'  # optional
+    @users = @search.run
+    # @users = User.all
     @pledge_class = User.pledge_class
     @pledge_class_name = User.pledge_class_name
     @grad_year = User.grad_year
-    if params[:search]
-       @searched_users = User.find(params[:search])
-       @searched_users
-     else
-       @searched_users = User.all.order('created_at DESC')
-       @searched_users.name
-     end
+    return @users
+    # if params[:search]
+    #    @searched_users = User.find(params[:search])
+    #    @searched_users
+    #  else
+    #    @searched_users = User.all.order('created_at DESC')
+    #    @searched_users.name
+    #  end
     # find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
     # render find_path
   end

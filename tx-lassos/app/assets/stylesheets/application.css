@@ -316,6 +316,10 @@ input:after {
 	color: red;
 }
 
+.quick-search {
+	margin-top: -20px;
+}
+
 
 /* Smartphones (portrait and landscape) ----------- */
 @media (max-width : 1200px) {
