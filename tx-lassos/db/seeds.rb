@@ -102,6 +102,13 @@ User.create([
     comments: 'These are comments. They are awesome. Hurray!',
     password: "stuffnthings",
     password_confirmation: "stuffnthings"
+  },
+  {
+    name: 'New Chick',
+    email: 'chick@new.com',
+    pledge_class: 'Spring 12',
+    password: "stuffnthings",
+    password_confirmation: "stuffnthings"
   }
 ])
 
