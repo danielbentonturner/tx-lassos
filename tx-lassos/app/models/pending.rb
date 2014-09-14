@@ -6,12 +6,11 @@ class Pending < ActiveRecord::Base
     end
   end
 
-  def need_approval
-    Pending.where(pending: true, approved: false)
-  end
-
   def convert_pending_to_user(new_user)
-    User.create!()
+    new_user.approval = true
+    pending_data = Pending.where(email: new_user.email)
+    new_user
+
   end
 
 end

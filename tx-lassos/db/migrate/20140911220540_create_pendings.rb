@@ -17,8 +17,7 @@ class CreatePendings < ActiveRecord::Migration
       t.string :comments
       t.string :perm_address1
       t.string :perm_address2
-      t.boolean :pending, default: false
-      t.boolean :approved, default: false
+      t.boolean :pending, default: true
       t.timestamps
     end
   end
