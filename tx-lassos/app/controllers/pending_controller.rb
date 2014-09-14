@@ -33,5 +33,10 @@ class PendingController < ApplicationController
     index
   end
 
+  def destroy
+    @users = User.where("pending_user.id => ? AND user_id => ?", pending_user.id, params[:user_id]).first
+    @users.destroy
+  end
+
 end
 
