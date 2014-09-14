@@ -1,6 +1,7 @@
 class PendingController < ApplicationController
 
   def index
+    approval_list
     render 'admin.html.erb'
   end
 
@@ -27,7 +28,7 @@ class PendingController < ApplicationController
   end
 
   def approve_user(params)
-    User.convert_pending_to_user(params.user)
+    Pending.convert_pending_to_user(params.user)
   end
 
 end
