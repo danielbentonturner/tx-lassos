@@ -23,7 +23,6 @@ class User < ActiveRecord::Base
     User.where(approved: false)
   end
 
-
   include Gravtastic
   gravtastic
 
