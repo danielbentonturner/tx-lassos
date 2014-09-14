@@ -105,3 +105,54 @@ User.create([
   }
 ])
 
+Pending.create([
+  {
+    name: 'New Chick',
+    street_address: '888 8th St.',
+    city_state: 'Austin, TX 78701',
+    phone: '512-555-1234',
+    email: 'chick@new.com',
+    email2: '',
+    major: 'Pre-Law',
+    pledge_class: 'Spring 12',
+    pledge_class_name: "Boomin' Babes",
+    grad_year: '',
+    employer: "UT Law Library",
+    job_title: 'book stacker',
+    comments: 'These are comments. They are awesome. Hurray!',
+    pending: true
+  },
+  {
+    name: 'Kinda New Chick',
+    street_address: '1234 120th St.',
+    city_state: 'Austin, TX 78701',
+    phone: '512-555-1234',
+    email: 'chick@kindanew.com',
+    email2: '',
+    major: 'Lit',
+    pledge_class: 'Spring 10',
+    pledge_class_name: 'Tricky Trim',
+    grad_year: '',
+    employer: "unemployed",
+    job_title: 'beggar',
+    comments: 'These are comments. They are awesome. Hurray!',
+    pending: true
+  },
+  {
+    name: 'Alix Morrow',
+    street_address: '123 Something St.',
+    city_state: 'Austin, TX 78701',
+    phone: '512-555-1234',
+    email: 'alixmorrow@alixcompany.com',
+    email2: 'alixmorrow@hotmail.com',
+    major: 'Advertising',
+    pledge_class: '1998',
+    pledge_class_name: 'Founder',
+    grad_year: '2002',
+    employer: "self",
+    job_title: 'Strategic Planner',
+    comments: 'These are comments. They are awesome. Hurray!',
+    pending: false
+  }
+])
+

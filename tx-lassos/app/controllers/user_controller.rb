@@ -55,12 +55,12 @@ class UserController < ApplicationController
     @pledge_class_name = User.pledge_class_name
     @grad_year = User.grad_year
     if params[:search]
-       @searched_users = User.find(params[:search])
-       @searched_users
-     else
-       @searched_users = User.all.order('created_at DESC')
-       @searched_users.name
-     end
+      @searched_users = User.find(params[:search])
+      @searched_users
+    else
+      @searched_users = User.all.order('created_at DESC')
+      @searched_users.name
+    end
     # find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
     # render find_path
   end

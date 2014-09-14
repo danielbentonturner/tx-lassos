@@ -22,33 +22,12 @@ class PendingController < ApplicationController
     @pending_all = Pending.all
   end
 
-<<<<<<< HEAD
-  def accept_pending
-    @approval_list = Pending.need_approval?
-  end
-
-  def index
-  end
-
-  def export_lassos
-    @users = User.all
-    respond_to do |format|
-      format.xls
-      format.xlsx
-    end
-  end
-
-  def import_lassos
-    Pending.import(params[:file].tempfile.path)
-    redirect_to root_path, flash.notice => "Spreadsheet imported."
-  end
-
   def approval_list
-    @approval_list = Pending.need_approval
+    @approval_list = User.need_approval
   end
 
   def approve_user(params)
-    Pending.convert_pending_to_user(params.user)
+    User.convert_pending_to_user(params.user)
   end
 
 end

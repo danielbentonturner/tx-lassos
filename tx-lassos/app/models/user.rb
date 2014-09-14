@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
     User.all.map {|u| u['grad_year']}
   end
 
+  def need_approval
+    User.where(approved: false)
+  end
+
   include Gravtastic
   gravtastic
 
