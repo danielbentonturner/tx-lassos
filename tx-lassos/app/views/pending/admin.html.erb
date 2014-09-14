@@ -42,6 +42,7 @@
     <th>Pledge Class</th>
     <th>Email</th>
     <th></th>
+    <th></th>
   </tr>
 
     <% @approval_list.each do |pending_user| %>
@@ -49,9 +50,8 @@
       <td><%= pending_user.name %></td>
       <td><%= pending_user.pledge_class %></td>
       <td><%= pending_user.email %></td>
-      <td><%= pending_user.id %></td>
-      <td><%= button_to "accept", :method=> "approve_user", :id => pending_user.id %></td>
-      <td><button class="btn btn-warning">Accept</button></td>
+      <td><%= button_to "accept", {:method=> "approve_user", :id => pending_user.id}, {:class => "btn btn-primary"} %></td>
+      <td><%= button_to "deny", {:method=> "delete_user", :id => pending_user.id}, {:class => "btn btn-warning"} %></td>
     </tr>
     <% end %>
     </table><br /><br />
