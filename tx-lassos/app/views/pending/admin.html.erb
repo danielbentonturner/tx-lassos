@@ -1,9 +1,22 @@
-<h1>Admin</h1>
-
-<h2>Export</h2>
-<p>
-  <%= link_to "Excel", export_path(format: "xls") %>
-</p>
+<div class="panel panel-default sign-div">
+  <div class="panel-heading">
+    <h3 class="panel-title">Export Database to Excel</h3>
+  </div>
+    <div class="panel-body">
+      <div class="sign-panel">
+      <h2>Export Lassos</h2>
+    <p>
+      <%= link_to "Excel", export_path(format: "xls") %>
+      <center>
+      <%= button_to "Export", "/export.xls", :id => "export",
+            :class => "btn btn-primary btn3d", :method => :get, :format => "xls" %>
+      </center>
+    </p>
+      
+    </div>
+  </div>
+</div>
+<br /><br />
 
 <div class="panel panel-default sign-div">
   <div class="panel-heading">
@@ -22,8 +35,8 @@
 </div>
 
 <center>
+  <table class="table table-hover table-striped">
   <h2>Pending Approvals</h2>
-  <table>
   <tr>
     <th>Name</th>
     <th>Pledge Class</th>
@@ -36,7 +49,7 @@
       <td><%= pending_user.name %></td>
       <td><%= pending_user.pledge_class %></td>
       <td><%= pending_user.email %></td>
-      <td><button>accept</button></td>
+      <td><button class="btn btn-warning">accept</button></td>
     </tr>
     <% end %>
     </table><br /><br />

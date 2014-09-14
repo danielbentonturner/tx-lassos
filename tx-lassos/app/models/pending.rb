@@ -25,4 +25,17 @@ class Pending < ActiveRecord::Base
     end
     new_user.save!
   end
+
+
+  def self.pledge_class
+    Pending.all.map {|u| u['pledge_class']}
+  end
+
+  def self.pledge_class_name
+    Pending.all.map {|u| u['pledge_class_name']}
+  end
+
+  def self.grad_year
+    Pending.all.map {|u| u['grad_year']}
+  end
 end
