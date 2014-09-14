@@ -6,9 +6,9 @@
 	<div class="panel-body-prof-main">
 		<div class="wrapper">
 			<h2>Find Another Alumna</h2>
-			<div class="form-control">
+			<div class="search-form">
 
-				<%= form_for @search, url: find_path do |f| %>
+				<%= form_for @search, url: find_path, :html => {:class => 'form'} do |f| %>
 
 				  <%=f.label :email %>
 				  <%=f.text_field :email %>
@@ -28,24 +28,57 @@
 				  <%=f.label :job_title %>
 				  <%=f.text_field :job_title %>
 
-				<p>Pledge Class: <%= f.select :pledge_class, options_for_select(@pledge_class.each {|pc| pc}), {:include_blank => true} %></p>
-				<p>Pledge Class Name: <%= f.select :pledge_class_name, options_for_select(@pledge_class_name.each {|pcn| pcn}), {:include_blank => true} %></p>
-				<p>Graduation Year: <%= f.select :grad_year, options_for_select(@grad_year.each {|gy| gy}), {:include_blank => true} %></p>
+				  <%=f.label :pledge_semester %>
+				  <%= f.select :pledge_class, options_for_select(@pledge_class.each {|pc| pc}), {:prompt => "Pledge Semester"}, { :class => 'form-selects' } %>
 
-				<%= f.submit "Search", :class => "btn btn-primary" %> 	
+				  <%=f.label :job_title %>
+				  <%= f.select :pledge_class_name, options_for_select(@pledge_class_name.each {|pcn| pcn}), {:prompt => "Pledge Class Name"}, { :class => 'form-selects' } %>
+
+				  <%=f.label :job_title %>
+				  <%= f.select :grad_year, options_for_select(@grad_year.each {|gy| gy}), {:prompt => "Graduation Year"}, { :class => 'form-selects' } %>
+			
+				<%= f.submit "Search", :class => "btn btn-primary search-butt" %> 	
 		<% end %>
 		</div>
 		</div>
 	</div>
 </div>
 	<div class="panel panel-default">
+	<div class="results">
 		<% if @users %>
-			<table class="search-results">
-			<% @users.each do |user| %>
-				<%= user.name %>, <%= user.email %>, <%= user.pledge_class_name %>
-			<% end %>
+			<table class="table table-striped table-hover search-results">
+				<h3>&nbsp; Matches</h3>
+				<thead>
+					<tr>
+						<td>Name</td>
+						<td>Email</td>
+						<td>Pledge Class</td>
+						<td>Semester</td>
+						<td>Graduation Year</td>
+						<td>Major</td>
+						<td>Location</td>
+						<td>Employer</td>
+						<td>Title</td>
+					</tr>
+				</thead>
+				<tbody>
+				<% @users.each do |user| %>
+					<tr>
+						<td><%= link_to user.name, "/profile/" + user.id.to_s %></td>
+						<td><%= link_to user.email, "/profile/" + user.id.to_s %></td>
+						<td><%= link_to user.pledge_class_name, "/profile/" + user.id.to_s %></td>
+						<td><%= link_to user.pledge_class, "/profile/" + user.id.to_s %></td>
+						<td><%= link_to user.grad_year, "/profile/" + user.id.to_s %></td>
+						<td><%= link_to user.major, "/profile/" + user.id.to_s %></td>
+						<td><%= link_to user.city_state, "/profile/" + user.id.to_s %></td>
+						<td><%= link_to user.employer, "/profile/" + user.id.to_s %></td>
+						<td><%= link_to user.job_title, "/profile/" + user.id.to_s %></td>
+					</tr>
+				<% end %>
+				</tbody>
 			</table>
 		<% end %>
+		</div>
 	</div>
 	
 
