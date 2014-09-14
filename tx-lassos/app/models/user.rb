@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	after_create :send_welcome_message
+	after_create :send_confirmation_notice_to_admin
 
   def self.pledge_class
     User.all.map {|u| u['pledge_class']}
@@ -13,6 +13,12 @@ class User < ActiveRecord::Base
     User.all.map {|u| u['grad_year']}
   end
 
+  def send_confirmation_notice_to_admin
+    @admin = User.where(admin: true)
+    @admin_emails = @admin.map { |x| x.email }
+    @admin_emails.each { |x| UserMailer.signup_confirmation(x).deliver }
+  end 
+
   include Gravtastic
   gravtastic
 
@@ -22,9 +28,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable
 
-  def send_welcome_message
-    UserMailer.signup_confirmation(self).deliver
-  end
+  # def send_welcome_message
+  #   UserMailer.signup_confirmation(self).deliver
+  # end
 end
 
 
