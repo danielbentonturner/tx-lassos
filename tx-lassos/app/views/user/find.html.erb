@@ -29,13 +29,13 @@
 				  <%=f.text_field :job_title %>
 
 				  <%=f.label :pledge_semester %>
-				  <%= f.select :pledge_class, options_for_select(@pledge_class.each {|pc| pc}), {:prompt => "Pledge Semester"}, { :class => 'form-selects' } %>
+				  <%= f.select :pledge_class, options_for_select(@pledge_class.each {|pc| pc}), {:include_blank => true}, { :class => 'form-selects' } %>
 
-				  <%=f.label :job_title %>
-				  <%= f.select :pledge_class_name, options_for_select(@pledge_class_name.each {|pcn| pcn}), {:prompt => "Pledge Class Name"}, { :class => 'form-selects' } %>
+				  <%=f.label :pledge_class_name %>
+				  <%= f.select :pledge_class_name, options_for_select(@pledge_class_name.each {|pcn| pcn}), {:include_blank => true}, { :class => 'form-selects' } %>
 
-				  <%=f.label :job_title %>
-				  <%= f.select :grad_year, options_for_select(@grad_year.each {|gy| gy}), {:prompt => "Graduation Year"}, { :class => 'form-selects' } %>
+				  <%=f.label :grad_year %>
+				  <%= f.select :grad_year, options_for_select(@grad_year.each {|gy| gy}), {:include_blank => true}, { :class => 'form-selects' } %>
 			
 				<%= f.submit "Search", :class => "btn btn-primary search-butt" %> 	
 		<% end %>
@@ -66,13 +66,13 @@
 					<tr>
 						<td><%= link_to user.name, "/profile/" + user.id.to_s %></td>
 						<td><%= link_to user.email, "/profile/" + user.id.to_s %></td>
-						<td><%= link_to user.pledge_class_name, "/profile/" + user.id.to_s %></td>
+						<td><% if user.pledge_class_name %><%= link_to user.pledge_class_name, "/profile/" + user.id.to_s %><% end %></td>
 						<td><%= link_to user.pledge_class, "/profile/" + user.id.to_s %></td>
-						<td><%= link_to user.grad_year, "/profile/" + user.id.to_s %></td>
-						<td><%= link_to user.major, "/profile/" + user.id.to_s %></td>
-						<td><%= link_to user.city_state, "/profile/" + user.id.to_s %></td>
-						<td><%= link_to user.employer, "/profile/" + user.id.to_s %></td>
-						<td><%= link_to user.job_title, "/profile/" + user.id.to_s %></td>
+						<td><% if user.grad_year %><%= link_to user.grad_year, "/profile/" + user.id.to_s %><% end %></td>
+						<td><% if user.major %><%= link_to user.major, "/profile/" + user.id.to_s %><% end %></td>
+						<td><% if user.city_state %><%= link_to user.city_state, "/profile/" + user.id.to_s %><% end %></td>
+						<td><% if user.employer %><%= link_to user.employer, "/profile/" + user.id.to_s %><% end %></td>
+						<td><% if user.job_title %><%= link_to user.job_title, "/profile/" + user.id.to_s %><% end %></td>
 					</tr>
 				<% end %>
 				</tbody>

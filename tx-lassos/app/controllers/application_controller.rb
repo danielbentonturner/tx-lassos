@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
 	protected
 
 	def configure_permitted_parameters
-		devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :pledge_class, :email, :password) }
+		@pledge_class_arr = User.pledge_class
+		devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :pledge_class, :email, :password, :pledge_class_arr) }
 		# devise_parameter_sanitizer.for(:account_update) {|a| a.permit(:name, :email, :email2, :street, :city, :state, :zip_code, :phone, :email, :marital_status, :major, :pledge_class, :pledge_class_name, :grad_year, :employer, :job_title, :facebook, :twitter, :instagram, :linkedin, :pinterest, :comments)}
 		# end
 
@@ -19,6 +20,11 @@ class ApplicationController < ActionController::Base
 		# devise_parameter_sanitizer.for(:account_update) {|a| a.permit(:name, :email, :email2, :street,
 		#  :city, :state, :zip_code, :phone, :email, :marital_status, :major, :pledge_class, :pledge_class_name,
 		#   :grad_year, :employer, :job_title, :facebook, :twitter, :instagram, :linkedin, :pinterest, :comments)}
+	end
+
+	def after_update_path_for(resource)
+	  @pledge_class_arr = User.pledge_class
+	  user_path(resource)
 	end
 
 end

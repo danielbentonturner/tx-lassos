@@ -54,9 +54,6 @@
 	            <div><%= f.label :name, :class => "modal-name" %><br />
 	            <%= f.text_field :name %></div>
 
-	            <div><%= f.label :pledge_class %><br />
-	            <%= f.text_field :pledge_class %></div>
-
 	            <div><%= f.label :email %><br />
 	            <%= f.email_field :email %></div>
 
@@ -65,7 +62,13 @@
 
 	            <div><%= f.label :password_confirmation %><br />
 	              <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
-	              <br />
+
+				<%= f.label :pledge_semester %>
+				<%= f.select :pledge_class, options_for_select(@pledge_class_arr.each {|pc| pc}), { :class => 'signin-select' } %>
+				<br /><br /><br />
+
+
+	            
 	        	<div class="mod-submit"><%= f.submit "Sign up" %></div>
 	          <% end %>
 	          <br /><br />
