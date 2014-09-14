@@ -52,7 +52,7 @@
           <div><%= label_tag :job_title %><br />
           <%= text_field_tag 'user[job_title]', @user.job_title %></div>
         </div>
-        <%= submit_tag "Save", :id => "info-save", :class => "btn btn-primary" %>
+        <%= submit_tag "Save", :id => "info-save", :class => "btn btn-primary btn3d" %>
         <%= hidden_field_tag "user_id", current_user.id %>
         <% end %>
       </div>
@@ -115,7 +115,7 @@
           <div><%= label_tag :marital_status %><br />
           <%= text_field_tag 'user[marital_status]', @user.marital_status %></div>
         </div>
-        <%= submit_tag "Save", :id => "contact-save", :class => "btn btn-primary" %>
+        <%= submit_tag "Save", :id => "contact-save", :class => "btn btn-primary btn3d" %>
         <%= hidden_field_tag "user_id", current_user.id %>
         <% end %>
       </div>
@@ -137,7 +137,7 @@
       <div id="text-area">
         <%= form_tag profile_path, :method => 'put' do %>
         <%= text_area_tag 'user[comments]', @user.comments, size: "150x8", :class => 'txtarea' %>
-        <%= submit_tag "Save", :id => "comm-save", :class => "btn btn-primary" %>
+        <%= submit_tag "Save", :id => "comm-save", :class => "btn btn-primary btn3d" %>
         <%= hidden_field_tag "user_id", current_user.id %>
         
         <% end %>
