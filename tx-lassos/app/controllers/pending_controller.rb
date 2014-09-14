@@ -29,7 +29,8 @@ class PendingController < ApplicationController
   end
 
   def approve_user
-    Pending.convert_pending_to_user(params[:p_id])
+    Pending.convert_pending_to_user(params['id'])
+    index
   end
 
 end
