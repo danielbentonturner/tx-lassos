@@ -28,6 +28,7 @@
     <th>Name</th>
     <th>Pledge Class</th>
     <th>Email</th>
+    <th></th>
   </tr>
 
     <% @approval_list.each do |pending_user| %>
@@ -35,6 +36,7 @@
       <td><%= pending_user.name %></td>
       <td><%= pending_user.pledge_class %></td>
       <td><%= pending_user.email %></td>
+      <td><button>accept</button></td>
     </tr>
     <% end %>
     </table><br /><br />
