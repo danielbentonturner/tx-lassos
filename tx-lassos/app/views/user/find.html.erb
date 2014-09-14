@@ -28,14 +28,16 @@
 				  <%=f.label :job_title %>
 				  <%=f.text_field :job_title %>
 
+				  <%=f.label :grad_year %>
+				  <%= f.text_field :grad_year %>
+
 				  <%=f.label :pledge_semester %>
 				  <%= f.select :pledge_class, options_for_select(@pledge_class.each {|pc| pc}), {:include_blank => true}, { :class => 'form-selects' } %>
 
 				  <%=f.label :pledge_class_name %>
 				  <%= f.select :pledge_class_name, options_for_select(@pledge_class_name.each {|pcn| pcn}), {:include_blank => true}, { :class => 'form-selects' } %>
 
-				  <%=f.label :grad_year %>
-				  <%= f.select :grad_year, options_for_select(@grad_year.each {|gy| gy}), {:include_blank => true}, { :class => 'form-selects' } %>
+				  
 			
 				<%= f.submit "Search", :class => "btn btn-primary search-butt btn3d" %> 	
 		<% end %>
