@@ -52,7 +52,7 @@ User.create([
     instagram: 'www.instagram.com/texasgirl',
     pinterest: 'www.pinterest.com/texas-girl',
     comments: 'These are comments. They are awesome. Hurray!',
-    approved: true,
+    approved: false,
     password: "stuffnthings",
     password_confirmation: "stuffnthings"
   },
