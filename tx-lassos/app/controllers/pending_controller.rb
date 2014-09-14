@@ -5,15 +5,16 @@ class PendingController < ApplicationController
     render 'admin.html.erb'
   end
 
-  def export_users
+  def export
     @users = User.all
     respond_to do |format|
+      format.html
       format.xls
       format.xlsx
     end
   end
 
-  def import_users
+  def import
     Pending.import(params[:file].tempfile.path)
     redirect_to root_path, :notice => "Spreadsheet imported."
   end
@@ -28,7 +29,7 @@ class PendingController < ApplicationController
   end
 
   def approve_user(params)
-    Pending.convert_pending_to_user(params[:user])
+    Pending.convert_pending_to_user(params[:id])
   end
 
 end

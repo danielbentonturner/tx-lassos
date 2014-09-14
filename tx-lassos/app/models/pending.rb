@@ -6,10 +6,12 @@ class Pending < ActiveRecord::Base
     end
   end
 
-  def self.convert_pending_to_user(new_user)
+  def self.convert_pending_to_user(user_id)
+    temp = User.where(id: user_id)
+    new_user = temp.first
     new_user.approved = true
     pending_data = Pending.where(email: new_user.email)
-    if !pending_data.first
+    if pending_data.first
       new_user.street = pending_data.first.street_address
       new_user.city_state = pending_data.first.city_state
       new_user.phone = pending_data.first.phone
