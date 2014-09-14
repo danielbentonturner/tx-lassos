@@ -19,6 +19,11 @@ class User < ActiveRecord::Base
     @admin_emails.each { |x| UserMailer.signup_confirmation(x).deliver }
   end 
 
+  def need_approval
+    User.where(approved: false)
+  end
+
+
   include Gravtastic
   gravtastic
 
