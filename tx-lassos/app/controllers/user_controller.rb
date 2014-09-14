@@ -1,5 +1,6 @@
 class UserController < ApplicationController
   before_filter :authenticate_user!
+  @@pledge_class = User.pledge_class
 
   
   # def initialize
@@ -15,13 +16,9 @@ class UserController < ApplicationController
   def index
     @users = User.all
     @user = User.find(current_user.id)
-    # if params[:search]
-    #    @searched_users = User.search(params[:search]).order("created_at DESC")
-    #    @searched_users
-    #  else
-    #    @searched_users = User.all.order('created_at DESC')
-    #    @searched_users
-    #  end
+    @pledge_class = User.pledge_class
+    @pledge_class_name = User.pledge_class_name
+    @grad_year = User.grad_year
   end
 
   def view_profile

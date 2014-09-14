@@ -148,10 +148,10 @@ input:after {
 }
 
 .mod-submit {
-	margin-top: 30px;
+	margin-top: 40px;
 	text-align: center;
 	width: 100%;
-	margin-right: 10%;
+	margin-left: 43%;
 }
 
 .modal-footer {
@@ -160,6 +160,8 @@ input:after {
 
 .center-mod {
 	text-align: center;
+	margin: 0 auto;
+	/*float: right;*/
 }
 
 .center-forgot {
@@ -322,10 +324,21 @@ input:after {
 
 .form-selects {
 	text-align: left;
+	float: left;
 }
 
 .search-butt {
-	margin: 20px;
+	margin-top: -20px;
+	float: right;	
+}
+
+#user_pledge_class {
+	text-align: left;
+	/*clear: both;*/
+	/*display: inline;*/
+	float: left;
+	/*left: 0;*/
+	margin: 0;
 }
 
 /* Smartphones (portrait and landscape) ----------- */
