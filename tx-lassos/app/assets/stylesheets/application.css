@@ -320,6 +320,13 @@ input:after {
 	margin-top: -20px;
 }
 
+.form-selects {
+	text-align: left;
+}
+
+.search-butt {
+	margin: 20px;
+}
 
 /* Smartphones (portrait and landscape) ----------- */
 @media (max-width : 1200px) {
