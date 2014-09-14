@@ -38,7 +38,10 @@ class UserController < ApplicationController
   end
 
   def self.search(query)
-    where("email like ?", "%#{query}%")
+    # where("email like ?", "%#{query}%")
+    # return scoped unless title.present? || company.present? || location_id.present?
+    # where(['title LIKE ? AND company LIKE ? AND location_id = ?', "%#{title}%", "%#{company}%", "%#{location_id}%"])
+    User.find(:all, :conditions => ["name LIKE %?%", params[:user][:name]])
   end
 
   def update
@@ -50,19 +53,13 @@ class UserController < ApplicationController
   end
 
   def find
-    @users = User.all
+    @search = Search.new(User, params[:search])
+    # @search.order = 'email'  # optional
+    @users = @search.run
+    # @users = User.all
     @pledge_class = User.pledge_class
     @pledge_class_name = User.pledge_class_name
     @grad_year = User.grad_year
-    if params[:search]
-      @searched_users = User.find(params[:search])
-      @searched_users
-    else
-      @searched_users = User.all.order('created_at DESC')
-      @searched_users.name
-    end
-    # find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-    # render find_path
   end
 
   def edit
@@ -75,11 +72,5 @@ class UserController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :email2, :street, :city_state, :phone, :email, :marital_status, :major, :pledge_class, :pledge_class_name, :grad_year, :employer, :job_title, :facebook, :twitter, :instagram, :linkedin, :pinterest, :comments)
   end
-
-  # def comment_params
-
-  # devise_parameter_sanitizer.for(:account_update) do |u|
-  #       u.permit(:name, :email, :email2, :street, :city, :state, :zip_code, :phone, :email, :marital_status, :major, :pledge_class, :pledge_class_name, :grad_year, :employer, :job_title, :facebook, :twitter, :instagram, :linkedin, :pinterest, :comments)
-  #     end
   
 end

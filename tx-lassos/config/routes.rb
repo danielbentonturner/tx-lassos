@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resource :profile, :controller => 'user'
   get "/profile/:p_id" => 'user#show'
   get "/find" => 'user#find'
+  post "/find" => 'user#find'
 
   #admin CP
   #user/ID

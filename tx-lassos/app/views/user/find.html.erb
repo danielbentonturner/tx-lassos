@@ -6,29 +6,47 @@
 	<div class="panel-body-prof-main">
 		<div class="wrapper">
 			<h2>Find Another Alumna</h2>
-			<div class="search-area">
-				
+			<div class="form-control">
 
-				<%= form_tag(find_path, :method => "get", id: "search-form") do %>
-				  <p>Search by: </p><%= select("user", "name", User.all.collect {|p| [ p.name, p.pledge_class_name ] }, {include_blank: 'Please choose...'}) %>
-				  <%= text_field_tag :search, params[:search], placeholder: "Search Users", :class => "form-control" %>
-				  <%= submit_tag "Search", :name => nil, :class => "btn btn-primary" %>
-				<% end %>
+				<%= form_for @search, url: find_path do |f| %>
 
-				<% if @searched_users %>
-					<p><%= @pledge_class %></p>
-					<p><%= @pledge_class_name %></p>
-					<p><%= @grad_year %></p>
-					<p><%= @searched_users.name %></p>
-				<% end %> 
-				<%= select_tag "pledge_class", options_for_select(@pledge_class.each {|pc| pc}, {include_blank: 'Please choose...'}) %>
-				<%= select_tag "pledge_class_name", options_for_select(@pledge_class_name.each {|pcn| pcn}, {include_blank: 'Please choose...'}) %>
-				<%= select_tag "grad_year", options_for_select(@grad_year.each {|gy| gy}, {include_blank: 'Please choose...'}) %>
+				  <%=f.label :email %>
+				  <%=f.text_field :email %>
 
-			</div>
+				  <%=f.label :name %>
+				  <%=f.text_field :name %>
+
+				  <%=f.label :location %>
+				  <%=f.text_field :city_state %>
+
+				  <%=f.label :major %>
+				  <%=f.text_field :major %>
+
+				  <%=f.label :employer %>
+				  <%=f.text_field :employer %>
+
+				  <%=f.label :job_title %>
+				  <%=f.text_field :job_title %>
+
+				<p>Pledge Class: <%= f.select :pledge_class, options_for_select(@pledge_class.each {|pc| pc}), {:include_blank => true} %></p>
+				<p>Pledge Class Name: <%= f.select :pledge_class_name, options_for_select(@pledge_class_name.each {|pcn| pcn}), {:include_blank => true} %></p>
+				<p>Graduation Year: <%= f.select :grad_year, options_for_select(@grad_year.each {|gy| gy}), {:include_blank => true} %></p>
+
+				<%= f.submit "Search", :class => "btn btn-primary" %> 	
+		<% end %>
+		</div>
 		</div>
 	</div>
 </div>
+	<div class="panel panel-default">
+		<% if @users %>
+			<table class="search-results">
+			<% @users.each do |user| %>
+				<%= user.name %>, <%= user.email %>, <%= user.pledge_class_name %>
+			<% end %>
+			</table>
+		<% end %>
+	</div>
+	
 
 
-<!-- name, city_state, major, pledge_class, pledge_class_name, grad_year, employer, job_title -->
