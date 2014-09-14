@@ -32,5 +32,10 @@ class PendingController < ApplicationController
     Pending.convert_pending_to_user(params[:id])
   end
 
+  def destroy
+    @users = User.where("pending_user.id => ? AND user_id => ?", pending_user.id, params[:user_id]).first
+    @users.destroy
+  end
+
 end
 
