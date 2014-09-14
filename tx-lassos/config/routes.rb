@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   resource :pending
   #, :controllers => { :registrations => "registrations" }
   get '/admin' => 'pending#index'
-  get "import" => "pending#import_users", :as => "import"
-  post "import" => "pending#import_users"
-  get 'export' => 'pending#export_users'
+  get "import" => "pending#import", :as => "import"
+  post "import" => "pending#import"
+  get "export" => "pending#export", :as => "export"
   root "user#index"
   # post '/' => "user#update"
   resource :profile, :controller => 'user'
