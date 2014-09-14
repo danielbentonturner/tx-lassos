@@ -27,8 +27,10 @@
       <br />
       <h2>Import Lassos</h2>
       <%= form_tag('/import', multipart: true) do %>
-        <%= file_field_tag(:file) %>
-        <%= submit_tag("Import") %>
+        <div class="col-lg-4 file-area">
+        <%= file_field_tag 'file', class: "form-control imp-field" %>
+        </div>
+        <%= submit_tag 'Import', class: "btn btn-primary import" %>
       <% end %>
     </div>
   </div>
@@ -41,6 +43,7 @@
     <th>Name</th>
     <th>Pledge Class</th>
     <th>Email</th>
+    <th>Accept?</th>
     <th></th>
     <th></th>
   </tr>
@@ -50,13 +53,13 @@
       <td><%= pending_user.name %></td>
       <td><%= pending_user.pledge_class %></td>
       <td><%= pending_user.email %></td>
-      <td><%= button_to "accept", {:method=> "approve_user", :id => pending_user.id}, {:class => "btn btn-primary"} %></td>
-      <td><%= button_to "deny", {:method=> "delete_user", :id => pending_user.id}, {:class => "btn btn-warning"} %></td>
+      <td><%= button_to "Accept", {:method=> "approve_user", :id => pending_user.id}, {:class => "btn btn-primary"} %></td>
+      <td><%= button_to "Deny", {:method=> "delete_user", :id => pending_user.id}, {:class => "btn btn-warning"} %></td>
     </tr>
     <% end %>
     </table><br /><br />
 
 <script type="text/javascript">
 $(".sign-panel").find("a").hide();
-$(".mod-submit").find('input[name=commit]').addClass("btn btn-primary btn3d center-forgot");
+// $(".imp-field").find('input[type=upload]').addClass("btn btn-primary btn3d center-forgot");
 </script>

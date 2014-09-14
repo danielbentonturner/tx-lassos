@@ -151,7 +151,7 @@ input:after {
 	margin-top: 40px;
 	text-align: center;
 	width: 100%;
-	margin-left: 43%;
+	/*margin-left: 43%;*/
 }
 
 .modal-footer {
@@ -346,6 +346,15 @@ input:after {
 	width: 100%;
 	margin-top: -60px;
 
+}
+
+.import {
+	float: left;
+	display: inline;
+}
+
+.file-area {
+	margin-left: 30%;
 }
 
 /*.logo-container {
