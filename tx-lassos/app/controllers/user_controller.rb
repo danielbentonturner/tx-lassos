@@ -16,8 +16,9 @@ class UserController < ApplicationController
   def index
     @users = User.all
     @user = User.find(current_user.id)
-    @pledge_class = User.pledge_class
-    @pledge_class_name = User.pledge_class_name
+    @pending = Pending.all
+    @pledge_class = Pending.pledge_class
+    @pledge_class_name = Pending.pledge_class_name
     @grad_year = User.grad_year
   end
 
@@ -67,7 +68,11 @@ class UserController < ApplicationController
   protected
 
   def user_params
-    params.require(:user).permit(:name, :email, :email2, :street, :city_state, :phone, :email, :marital_status, :major, :pledge_class, :pledge_class_name, :grad_year, :employer, :job_title, :facebook, :twitter, :instagram, :linkedin, :pinterest, :comments)
+    params.require(:user).permit(:name, :email, :email2, :street, :city_state, :phone, :marital_status, :major, :pledge_class, :pledge_class_name, :grad_year, :employer, :job_title, :facebook, :twitter, :instagram, :linkedin, :pinterest, :comments)
   end
+
+  # def pending_params
+  #   params.require(:pending).permit(:name, :email, :email2, :street_address, :city_state, :phone, :major, :pledge_class, :pledge_class_name, :grad_year, :employer, :job_title, :comments)
+  # end
   
 end

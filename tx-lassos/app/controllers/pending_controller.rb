@@ -15,7 +15,7 @@ class PendingController < ApplicationController
 
   def import_users
     Pending.import(params[:file].tempfile.path)
-    redirect_to root_path, flash.notice = "Spreadsheet imported."
+    redirect_to root_path, :notice => "Spreadsheet imported."
   end
 
   def show
