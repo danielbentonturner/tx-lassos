@@ -31,11 +31,13 @@
   </tr>
 
     <% @approval_list.each do |pending_user| %>
-      <button <% THIS CALLS approve_user with a user object %> >Approve</button>
+    <tr>
       <td><%= pending_user.name %></td>
       <td><%= pending_user.pledge_class %></td>
       <td><%= pending_user.email %></td>
+    </tr>
     <% end %>
+    </table><br /><br />
 
 <script type="text/javascript">
 $(".sign-panel").find("a").hide();

@@ -1,6 +1,7 @@
 class PendingController < ApplicationController
 
   def index
+    approval_list
     render 'admin.html.erb'
   end
 
