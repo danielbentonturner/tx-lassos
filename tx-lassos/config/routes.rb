@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "/profile/:p_id" => 'user#show'
   get "/find" => 'user#find'
   post "/find" => 'user#find'
-  put "/admin" => 'pending#approve_user'
+  post "/admin" => 'pending#approve_user'
 
   #admin CP
   #user/ID
