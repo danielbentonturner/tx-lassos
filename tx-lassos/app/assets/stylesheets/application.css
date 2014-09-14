@@ -86,10 +86,10 @@ input:after {
 .btn3d {
     position:relative;
     border:0;
-    border-radius:3px;
-    margin:15px 10px 0 0;
+    border-radius:2px;
+    margin:12px 10px 0 0;
     transition:all .09s linear;
-    box-shadow:0 0 0 1px transparent inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0px 4px 5px 0px rgba(0,0,0,0.3), 0px 4px 5px 0px rgba(0,0,0,0.3);
+    box-shadow:0 0 0 1px transparent inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0px 3px 3px 0px rgba(0,0,0,0.3), 0px 3px 3px 0px rgba(0,0,0,0.3);
     outline:medium none;
     -moz-outline-style:none;
 }
@@ -269,8 +269,8 @@ input:after {
 }
 
 #logo {
-	width: 30%;
-	height: 30%;
+	max-width: 22%;
+	max-height: 22%;
 }
 
 #comm-save {
@@ -303,7 +303,7 @@ input:after {
 	margin: 24px 5px 3px 0px;
 }
 
-.edit {
+.edit, .pull-right {
 	margin: 0 0 4px 4px;
 }
 
@@ -340,6 +340,18 @@ input:after {
 	/*left: 0;*/
 	margin: 0;
 }
+
+#logo-div-all, .logo-container {
+	text-align: center;
+	width: 100%;
+	margin-top: -60px;
+
+}
+
+/*.logo-container {
+	width: 100%;
+	text-align: center;
+}*/
 
 /* Smartphones (portrait and landscape) ----------- */
 @media (max-width : 1200px) {

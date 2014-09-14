@@ -37,13 +37,13 @@
 				  <%=f.label :grad_year %>
 				  <%= f.select :grad_year, options_for_select(@grad_year.each {|gy| gy}), {:include_blank => true}, { :class => 'form-selects' } %>
 			
-				<%= f.submit "Search", :class => "btn btn-primary search-butt" %> 	
+				<%= f.submit "Search", :class => "btn btn-primary search-butt btn3d" %> 	
 		<% end %>
 		</div>
 		</div>
 	</div>
 </div>
-	<div class="panel panel-default">
+	<!-- <div class="panel panel-default"> -->
 	<div class="results">
 		<% if @users %>
 			<table class="table table-striped table-hover search-results">
@@ -78,7 +78,7 @@
 				</tbody>
 			</table>
 		<% end %>
-		</div>
+		<!-- </div> -->
 	</div>
 	
 
