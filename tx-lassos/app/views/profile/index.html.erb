@@ -6,9 +6,7 @@
   </div>
   <div class="panel-body-prof-main">
     <div class="wrapper">
-      <div class="grav-div">
-        <%= image_tag @user.gravatar_url(:size => 256), :class => 'grav-photo' %>
-      </div>
+      
       <div class="main-wrapper">
         <div class="profile-main">
           <h2 class="section-header-top">Lassos Info</h2>
@@ -19,6 +17,11 @@
             <p><b>Major:</b> <%= @user.major %></p>
           </div>
         </div>
+
+        <div class="grav-div">
+          <%= image_tag @user.gravatar_url(:size => 256), :class => 'grav-photo' %>
+        </div>
+        
         <div class="professional">
           <h2 class="section-header-top">Professional</h2>
           <div class="pro-sub">
@@ -45,16 +48,16 @@
         </div>
         <div class="social">
           <h3 class="section-header">Social Networking</h3>
-          <p><% if @user.facebook != "" %><i class="fa fa-facebook"></i> <%= @user.facebook %><% end %></p>
-          <p><% if @user.twitter != "" %><i class="fa fa-twitter"></i> <%= @user.twitter %><% end %></p>
-          <p><% if @user.instagram != "" %><i class="fa fa-instagram"></i> <%= @user.instagram %><% end %></p>
-          <p><% if @user.pinterest != "" %><i class="fa fa-pinterest"></i> <%= @user.pinterest %><% end %></p>
+          <p><% if @user.facebook && @user.facebook != "" %><i class="fa fa-facebook"></i> <%= @user.facebook %><% end %></p>
+          <p><% if @user.twitter && @user.twitter != "" %><i class="fa fa-twitter"></i> <%= @user.twitter %><% end %></p>
+          <p><% if @user.instagram && @user.instagram != "" %><i class="fa fa-instagram"></i> <%= @user.instagram %><% end %></p>
+          <p><% if @user.pinterest && @user.pinterest != "" %><i class="fa fa-pinterest"></i> <%= @user.pinterest %><% end %></p>
         </div>
         <div class="misc">
           <h3 class="section-header">Contact</h3>
           <p><i class="fa fa-phone"></i></i> <%= @user.phone %></p>
           <p><i class="fa fa-envelope"></i> <%= @user.email %></p>
-          <p><% if @user.email2 %><i class="fa fa-envelope-o"></i> <%= @user.email2 %> <% end %></p>
+          <p><% if @user.email2 && @user.email2 != "" %><i class="fa fa-envelope-o"></i> <%= @user.email2 %> <% end %></p>
         </div>
       </div>
     </div>

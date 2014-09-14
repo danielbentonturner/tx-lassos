@@ -3,13 +3,13 @@
     <h3 class="panel-title">Export Database to Excel</h3>
   </div>
     <div class="panel-body">
-      <div class="sign-panel">
+      <div class="sign-panel export-panel">
       <h2>Export Lassos</h2>
     <p>
       <%= link_to "Excel", export_path(format: "xls") %>
       <center>
       <%= button_to "Export", "/export.xls", :id => "export",
-            :class => "btn btn-primary btn3d", :method => :get, :format => "xls" %>
+            :class => "btn btn-primary exp-butt", :method => :get, :format => "xls" %>
       </center>
     </p>
       
@@ -23,8 +23,7 @@
     <h3 class="panel-title">Import CSV File to Pending Database</h3>
   </div>
   <div class="panel-body">
-    <div class="sign-panel">
-      <br />
+    <div class="sign-panel import-panel">
       <h2>Import Lassos</h2>
       <%= form_tag('/import', multipart: true) do %>
         <div class="col-lg-4 file-area">
@@ -53,7 +52,7 @@
       <td><%= pending_user.name %></td>
       <td><%= pending_user.pledge_class %></td>
       <td><%= pending_user.email %></td>
-      <td><%= button_to "Accept", {:method=> "approve_user", :id => pending_user.id}, {:class => "btn btn-primary"} %></td>
+      <td><%= button_to "Accept", {:method=> "approve_user", :p_id => pending_user.id}, {:class => "btn btn-primary"} %></td>
       <td><%= button_to "Deny", {:method=> "delete_user", :id => pending_user.id}, {:class => "btn btn-warning"} %></td>
     </tr>
     <% end %>

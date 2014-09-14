@@ -173,6 +173,8 @@ input:after {
 .grav-photo {
 	border:2px solid #F8953B;
 	float: left;
+	margin: 0px 0px 0px 14px;
+
 }
 
 .profile-main {
@@ -180,7 +182,7 @@ input:after {
 	display: inline-block;
 	height: 260px;
 	border: 2px solid #F8953B;
-	margin-left: 10px;
+	/*margin-left: 10px;*/
 	width: 37%;
 	text-align: center;
 	background: #F5F5F5;
@@ -196,7 +198,7 @@ input:after {
 }
 
 .professional {
-	margin-left: 12px;
+	margin-left: 10px;
 	background: url(rope.png) #F5F5F5;
 	background-size: 100% 100%;
 	border:2px solid #F8953B;
@@ -355,6 +357,14 @@ input:after {
 
 .file-area {
 	margin-left: 30%;
+}
+
+.import-panel, .export-panel {
+	height: 110px;
+}
+
+.exp-butt {
+	margin-left: 47%;
 }
 
 /*.logo-container {
