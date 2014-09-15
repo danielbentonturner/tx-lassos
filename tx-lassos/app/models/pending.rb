@@ -61,4 +61,8 @@ class Pending < ActiveRecord::Base
    grad.uniq!
    grad
   end
+
+  def self.admin_edit
+    render "admin_edit.html.erb"
+  end
 end

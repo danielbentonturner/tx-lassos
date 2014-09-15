@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "/find" => 'user#find'
   post "/find" => 'user#find'
   post "/admin" => 'pending#handle_user'
+  get "/admin_edit" => 'pending#admin_edit'
 
   #admin CP
   #user/ID
