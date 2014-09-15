@@ -36,7 +36,7 @@ class Pending < ActiveRecord::Base
 
 
   def self.pledge_class
-   pledges = Pending.all.map {|u| u['pledge_class']}
+   pledges = Pending.all.map {|u| u['pledge_class']}.compact
    pledges.reject! { |c| c.empty? }
    pledges.reject! {|x| x == " " }
    pledges.map(&:strip)
@@ -45,7 +45,7 @@ class Pending < ActiveRecord::Base
   end
 
   def self.pledge_class_name
-    p_names = Pending.all.map {|u| u['pledge_class_name']}
+    p_names = Pending.all.map {|u| u['pledge_class_name']}.compact
     p_names.reject! { |c| c.empty? }
     p_names.reject! {|x| x == " " }
     p_names.map(&:strip)
@@ -54,7 +54,7 @@ class Pending < ActiveRecord::Base
   end
 
   def self.grad_year
-   grad = Pending.all.map {|u| u['grad_year']}
+   grad = Pending.all.map {|u| u['grad_year']}.compact
    grad.reject! { |c| c.empty? }
    grad.reject! {|x| x == " " }
    grad.map(&:strip)

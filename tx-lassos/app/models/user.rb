@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 	after_create :send_confirmation_notice_to_admin
 
   def self.pledge_class
-    up_class = User.all.map {|u| u['pledge_class']}
+    up_class = User.all.map {|u| u['pledge_class']}.compact
     up_class.reject! { |c| c.empty? }
     up_class.reject! {|x| x == " " }
     up_class.map(&:strip)
@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   end
 
   def self.pledge_class_name
-    up_name = User.all.map {|u| u['pledge_class_name']}
+    up_name = User.all.map {|u| u['pledge_class_name']}.compact
     up_name.reject! { |c| c.empty? }
     up_name.reject! {|x| x == " " }
     up_name.map(&:strip)
@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   end
 
   def self.grad_year
-    u_grad = User.all.map {|u| u['grad_year']}
+    u_grad = User.all.map {|u| u['grad_year']}.compact
     u_grad.reject! { |c| c.empty? }
     u_grad.reject! {|x| x == " " }
     u_grad.map(&:strip)
