@@ -1,9 +1,16 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="panel panel-default sign-div">
+  <div class="panel-heading">
+    <h3 class="panel-title">Change Password</h3>
+  </div>
+  <div class="panel-body">
+  <div class="sign-panel">
+    
+      <br />
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
+  <div><%= f.label :email %>
   <%= f.email_field :email, autofocus: true %></div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -16,8 +23,17 @@
   <div><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %></div>
+  <div><%= f.label :current_password %> <br />
+    <%= f.password_field :current_password, autocomplete: "off" %><i>(we need your current password to confirm your changes)</i></div>
+    <br />
+    </div>
+   
+        <div class="pull-right"> 
+    <div class="mod-submit"><%= f.submit "Update" %>
+    <% end %>
+    </div>
+  </div>
+  </div>
+</div>
 
-  <div><%= f.submit "Update" %></div>
-<% end %>
+
