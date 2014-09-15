@@ -37,5 +37,16 @@ class PendingController < ApplicationController
     index
   end
 
+  def admin_edit
+    @users = User.all
+    @user = User.find(params['edit_user'])
+    @pending = Pending.all
+    @pledge_class = Pending.pledge_class
+    @pledge_class_name = Pending.pledge_class_name
+    @grad_year = User.grad_year
+    @edit_user = Pending.admin_edit(params['edit_user'])
+    render "admin_edit.html.erb"
+  end
+
 end
 

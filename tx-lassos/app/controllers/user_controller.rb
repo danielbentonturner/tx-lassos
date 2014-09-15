@@ -43,11 +43,17 @@ class UserController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:user_id])
-    @user.update(user_params)
-
-    @user.save!(:validate => false)
-    redirect_to root_path
+    if params.has_key? :@edit_user
+      @user = User.find(params[:user_id])
+      @user.update(edit_params)
+      @user.save!(:validate => false)
+      redirect_to '/profile/' + @user.id.to_s
+    else
+      @user = User.find(params[:user_id])
+      @user.update(user_params)
+      @user.save!(:validate => false)
+      redirect_to root_path
+    end
   end
 
   def find
@@ -71,8 +77,8 @@ class UserController < ApplicationController
     params.require(:user).permit(:name, :email, :email2, :street, :city_state, :phone, :marital_status, :major, :pledge_class, :pledge_class_name, :grad_year, :employer, :job_title, :facebook, :twitter, :instagram, :linkedin, :pinterest, :comments)
   end
 
-  # def pending_params
-  #   params.require(:pending).permit(:name, :email, :email2, :street_address, :city_state, :phone, :major, :pledge_class, :pledge_class_name, :grad_year, :employer, :job_title, :comments)
-  # end
+  def edit_params
+    params.require(:@edit_user).permit(:name, :email, :email2, :street_address, :city_state, :phone, :major, :pledge_class, :pledge_class_name, :grad_year, :employer, :job_title, :comments)
+  end
   
 end

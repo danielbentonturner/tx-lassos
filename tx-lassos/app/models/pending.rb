@@ -62,8 +62,8 @@ class Pending < ActiveRecord::Base
    grad
   end
 
-  def admin_edit
-    @edit_user = User..where(id: edit_user)
-    render "admin_edit.html.erb"
+  def self.admin_edit(user_to_edit)
+    temp = User.where(id: user_to_edit).first
+    temp
   end
 end
