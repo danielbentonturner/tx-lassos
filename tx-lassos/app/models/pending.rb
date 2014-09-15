@@ -28,6 +28,12 @@ class Pending < ActiveRecord::Base
     new_user.save!
   end
 
+  def self.destroy_user(user_id)
+    temp = User.where(id: user_id)
+    removed_user = temp.first
+    removed_user.destroy!
+  end
+
 
   def self.pledge_class
     Pending.all.map {|u| u['pledge_class']}

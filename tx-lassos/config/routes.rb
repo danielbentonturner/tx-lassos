@@ -12,8 +12,7 @@ Rails.application.routes.draw do
   get "/profile/:p_id" => 'user#show'
   get "/find" => 'user#find'
   post "/find" => 'user#find'
-  post "/admin" => 'pending#approve_user'
-  delete "/admin" => 'pending#destroy'
+  post "/admin" => 'pending#handle_user'
 
   #admin CP
   #user/ID

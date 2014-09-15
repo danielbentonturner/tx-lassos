@@ -52,9 +52,8 @@
       <td><%= pending_user.name %></td>
       <td><%= pending_user.pledge_class %></td>
       <td><%= pending_user.email %></td>
-      <td><%= button_to "Accept", {:method=> "approve_user", :controller => "pending", :id => pending_user.id}, {:class => "btn btn-primary"} %></td>
-      <td><%= button_to "delete", {:controller => :pending,
-      :action => 'destroy', :id => pending_user.id }, :method => :delete %></td>
+      <td><%= button_to "Accept", {:id => pending_user.id}, {:class => "btn btn-primary"} %></td>
+      <td><%= button_to "Deny", {:destroy => pending_user.id }, {:class => "btn btn-warning"} %></td>
     </tr>
     <% end %>
     </table><br /><br />

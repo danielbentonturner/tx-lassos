@@ -28,14 +28,13 @@ class PendingController < ApplicationController
     @approval_list = User.need_approval
   end
 
-  def approve_user
-    Pending.convert_pending_to_user(params['id'])
+  def handle_user
+    if params['destroy']
+      Pending.destroy_user(params['destroy'])
+    else
+      Pending.convert_pending_to_user(params['id'])
+    end
     index
-  end
-
-  def destroy
-    @users = User.where("pending_user.id => ? AND user_id => ?", pending_user.id, params[:user_id]).first
-    @users.destroy
   end
 
 end
