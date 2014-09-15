@@ -367,6 +367,26 @@ input:after {
 	margin-left: 47%;
 }
 
+#grav-link {
+	color: blue;
+	font-style: italic;
+}
+
+#grav-link:hover {
+	background: white;
+	color: purple;
+	text-decoration: underline;
+}
+
+a:hover {
+	background: white;
+	color: blue;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #F8953B;
+}
+
 /*.logo-container {
 	width: 100%;
 	text-align: center;

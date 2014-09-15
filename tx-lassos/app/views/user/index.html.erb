@@ -115,8 +115,7 @@
           <%= text_field_tag 'user[instagram]', @user.instagram %></div>
           <div><%= label_tag :pinterest %><br />
           <%= text_field_tag 'user[pinterest]', @user.pinterest %></div>
-          <div><%= label_tag :marital_status %><br />
-          <%= text_field_tag 'user[marital_status]', @user.marital_status %></div>
+          
         </div>
         <%= submit_tag "Save", :id => "contact-save", :class => "btn btn-primary btn3d" %>
         <%= hidden_field_tag "user_id", current_user.id %>
