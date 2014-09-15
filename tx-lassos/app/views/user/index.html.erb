@@ -78,10 +78,11 @@
         </div>
         <div class="social">
           <h3 class="section-header">Social Networking</h3>
-          <p><% if current_user.facebook && current_user.facebook != "" %><i class="fa fa-facebook"></i> <%= current_user.facebook %><% end %></p>
-          <p><% if current_user.twitter && current_user.twitter != "" %><i class="fa fa-twitter"></i> <%= current_user.twitter %><% end %></p>
-          <p><% if current_user.instagram && current_user.instagram != "" %><i class="fa fa-instagram"></i> <%= current_user.instagram %><% end %></p>
-          <p><% if current_user.pinterest && current_user.pinterest != "" %><i class="fa fa-pinterest"></i> <%= current_user.pinterest %><% end %></p>
+          <p><a href="http://www.facebook.com/<%= current_user.facebook %>"><% if current_user.facebook && current_user.facebook != "" %><i class="fa fa-facebook"></i> <%= current_user.facebook %><% end %></a></p>
+          <p><a href="http://www.twitter.com/<%= current_user.twitter %>"><% if current_user.twitter && current_user.twitter != "" %><i class="fa fa-twitter"></i> <%= current_user.twitter %><% end %></a></p>
+          <p><a href="http://www.instagram.com/<%= current_user.instagram %>"><% if current_user.instagram && current_user.instagram != "" %><i class="fa fa-instagram"></i> <%= current_user.instagram %><% end %></a></p>
+          <p><a href="http://www.pinterest.com/<%= current_user.pinterest %>"><% if current_user.pinterest && current_user.pinterest != "" %><i class="fa fa-pinterest"></i> <%= current_user.pinterest %><% end %></a></p>
+          <p><a href="http://www.linkedin.com/in/<%= current_user.linkedin %>"><% if current_user.linkedin && current_user.linkedin != "" %><i class="fa fa-linkedin"></i> <%= current_user.linkedin %><% end %></a></p>
         </div>
         <div class="misc">
           <h3 class="section-header">Contact</h3>
