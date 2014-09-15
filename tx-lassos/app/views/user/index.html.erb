@@ -18,11 +18,9 @@
             <p><b>Major:</b> <%= current_user.major %></p>
           </div>
         </div>
-
         <div class="grav-div">
           <%= image_tag current_user.gravatar_url(:size => 256), :class => 'grav-photo' %>
         </div>
-
         <div class="professional">
           <h2 class="section-header-top">Professional</h2>
           <div class="pro-sub">
@@ -38,16 +36,12 @@
           <%= text_field_tag 'user[name]', @user.name %></div>
           <div><%= label_tag :major %><br />
           <%= text_field_tag 'user[major]', @user.major %></div>
-
           <div><%= label_tag :grad_year %><br />
           <%= text_field_tag 'user[grad_year]', @user.grad_year %></div>
-
           <%= label_tag :pledge_semester %>
           <%= select_tag 'user[pledge_class]', options_for_select(@pledge_class.each {|pc| pc}), { :class => 'form-selects' } %>
-
           <%= label_tag :pledge_class_name %>
           <%= select_tag 'user[pledge_class_name]', options_for_select(@pledge_class_name.each {|pcn| pcn}), { :class => 'form-selects' } %>
-
         </div>
         <div class="pro-form-right">
           <div><%= label_tag :employer, nil, :class => "emp-butt" %><br />

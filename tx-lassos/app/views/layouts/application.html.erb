@@ -6,49 +6,49 @@
 		<%= javascript_include_tag 'application' %>
 		<%= csrf_meta_tags %>
 		<link href='http://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
-		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-		</head>
-		<body>
-			<div class="container">
-				<nav class="navbar navbar-inverse" role="navigation">
-					<div class="container-fluid">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							</button>
-							<a class="navbar-brand" id="nav-title" href="#">Texas Lassos' Alumni Group</a>
+			<link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+				<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+			</head>
+			<body>
+				<div class="container">
+					<nav class="navbar navbar-inverse" role="navigation">
+						<div class="container-fluid">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								</button>
+								<a class="navbar-brand" id="nav-title" href="#">Texas Lassos' Alumni Group</a>
+							</div>
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								<ul class="nav navbar-nav navbar-right">
+									<li id="home"><%= link_to root_path do %><i class="fa fa-home"></i> Home<% end %></li>
+									<li id="find"><a href="/find"><i class="fa fa-search"></i> Find Alumna</a></li>
+									<li id="sign-out"><%= link_to "Log out", destroy_session_path(:user), :method => :delete %></li>
+									<% if current_user && current_user.admin %>
+									<li id="admin"><a href="/admin"><i class="fa fa-lock"></i> Admin Panel</a></li>
+									<% end %>
+								</ul>
+								</div><!-- /.navbar-collapse -->
+								</div><!-- /.container-fluid -->
+							</nav>
+							<p class="notice"><%= notice %></p>
+							<p class="alert"><%= alert %></p>
+							<div class="logo-container">
+								<div id="logo-div-all">
+									<img src="<%= image_path 'lassos.png' %>" alt="Texas Lassos' Alumni Group" id="logo" />
+								</div>
+							</div>
+							
+							<%= yield %>
+							
 						</div>
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav navbar-right">
-								<li id="home"><%= link_to "Home", root_path %></li>
-								<li id="find"><a href="/find">Find Alumna</a></li>
-								<li id="sign-out"><%= link_to "Log out", destroy_session_path(:user), :method => :delete %></li>
-								<% if current_user && current_user.admin %>
-								<li id="admin"><a href="/admin">Admin Panel</a></li>
-								<% end %>
-							</ul>
-							</div><!-- /.navbar-collapse -->
-							</div><!-- /.container-fluid -->
-						</nav>
-						<p class="notice"><%= notice %></p>
-						<p class="alert"><%= alert %></p>
-						<div class="logo-container">
-			  			<div id="logo-div-all">
-								<img src="<%= image_path 'lassos.png' %>" alt="Texas Lassos' Alumni Group" id="logo" />
-			  			</div>
+						<div class="site-footer">
+							Welcome Texas Lassos' Alumni!
 						</div>
-						
-						<%= yield %>
-						
-		</div>
-		<div class="site-footer">
-			Welcome Texas Lassos' Alumni!
-		</div>
-	</body>
-</html>
+					</body>
+				</html>
