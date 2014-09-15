@@ -306,7 +306,9 @@ input:after {
 }
 
 .edit, .pull-right {
-	margin: 0 0 4px 4px;
+	/*margin: 0 0 4px 4px;*/
+	padding-bottom: 0px;
+	padding-top: 0px;
 }
 
 .import-form {
@@ -366,6 +368,14 @@ input:after {
 .exp-butt {
 	margin-left: 47%;
 }
+
+strong {
+	color: #F8953B;
+	font-size: 20px;
+}
+/*span.panel-title {
+	font-weight: bold
+}*/
 
 /*.logo-container {
 	width: 100%;
