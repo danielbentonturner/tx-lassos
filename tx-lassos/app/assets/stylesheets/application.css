@@ -306,7 +306,9 @@ input:after {
 }
 
 .edit, .pull-right {
-	margin: 0 0 4px 4px;
+	/*margin: 0 0 4px 4px;*/
+	padding-bottom: 0px;
+	padding-top: 0px;
 }
 
 .import-form {
@@ -367,6 +369,7 @@ input:after {
 	margin-left: 47%;
 }
 
+<<<<<<< HEAD
 #grav-link {
 	color: blue;
 	font-style: italic;
@@ -385,6 +388,11 @@ a:hover {
 
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
   background-color: #F8953B;
+}
+
+strong {
+	color: #F8953B;
+	font-size: 20px;
 }
 
 /*.logo-container {
