@@ -154,6 +154,10 @@ input:after {
 	/*margin-left: 43%;*/
 }
 
+#regi {
+	margin: 25px 0px 0px 43%;
+
+}
 
 .modal-footer {
 	text-align: center;
@@ -407,6 +411,10 @@ strong {
 
 }
 
+#change-pass {
+	margin-left: 32%;
+}
+
 /*.logo-container {
 	width: 100%;
 	text-align: center;
@@ -439,6 +447,11 @@ strong {
 		clear: both;
 		margin: 0 auto;
 	}*/
+
+	#change-pass {
+		margin-left: 10%;
+		font-size: 0.8em;
+	}
 
 	.school-info {
 
