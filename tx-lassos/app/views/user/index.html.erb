@@ -19,7 +19,7 @@
           </div>
         </div>
         <div class="grav-div">
-          <%= image_tag current_user.gravatar_url(:size => 256), :class => 'grav-photo' %>
+          <a href="http://en.gravatar.com"><%= image_tag current_user.gravatar_url(:size => 256), :class => 'grav-photo' %></a>
         </div>
         <div class="professional">
           <h2 class="section-header-top">Professional</h2>
@@ -114,6 +114,7 @@
         </div>
         <%= submit_tag "Save", :id => "contact-save", :class => "btn btn-primary btn3d" %>
         <%= hidden_field_tag "user_id", current_user.id %>
+        <input type="button" value ="INSTRUCTIONS" class="btn btn-warning btn3d instructions" data-toggle="modal" data-target="#helpModal" />
         <% end %>
       </div>
     </div>
@@ -143,3 +144,52 @@
     </div>
   </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade helpModal" id="helpModal" tabindex="-2" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="helpModalLabel">Instructions for social links</h4>
+      </div>
+      <div class="modal-body">
+      
+      <center><p><b>Here's how we designed your social links to work:</b></p></center>
+      <p><b>Twitter:</b> you can put put in your twitter handle with or without the '@'. For</p>
+      <p>example: entering '@myusername' or 'myusername' will take you to the profile page of</p>
+      <p>someone using 'myusername'as a twitter handle.</p>
+      <br /><br />
+      <p><b>Facebook:</b> go to facebook, login, and click on your name in the top navigation</p>
+      <p>bar to see your profileWhat ever comes after "http://www.facebook.com/" is all</p>
+      <p>you need to enter in this field.</p>
+      <br /><br />
+      <p><b>Pinterest and Instagram:</b> These sites both just stick your user name at the</p>
+      <p>end of their address so we only need your username here.</p>
+      <br /><br />
+      <p><b>LinkedIn:</b> This is the odd one. Go to LinkedIn, login, and on the top bar</p>
+      <p>click on "Profile". Right below your profile picture will be a LinkedIn logo and</p>
+      <p>your profile address. We only need you to enter the part after</p>
+      <p>"http://www.linked.com/in/". This is the part that is unique to your profile</p>
+
+          
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn3d" data-dismiss="modal">Close</button>
+        
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+// $('#comm').on('click', function(e) {
+//   $('')
+// });
+
+// onClick="$('#helpModal').modal()"
+
+</script>

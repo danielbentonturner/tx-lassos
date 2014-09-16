@@ -19,7 +19,7 @@
           </div>
         </div>
         <div class="grav-div">
-          <%= image_tag @user.gravatar_url(:size => 256), :class => 'grav-photo' %>
+          <a href="http://en.gravatar.com"><%= image_tag current_user.gravatar_url(:size => 256), :class => 'grav-photo' %></a>
         </div>
         
         <div class="professional">
