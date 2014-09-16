@@ -231,6 +231,11 @@ input:after {
 	text-align: center;
 }
 
+#error_explanation {
+    margin: 0 auto;
+}
+}
+
 .wrapper-contact {
 	margin: 10px;
 	height: 210px;
