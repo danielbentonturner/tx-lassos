@@ -1,18 +1,49 @@
-<h2>Sign up</h2>
+<div class="panel panel-default sign-div">
+  <div class="panel-heading">
+    <h3 class="panel-title">Sign up</h3>
+  </div>
+  <div class="panel-body">
+    <div class="sign-panel">
+    <br />
+
+    <center>
+    <%= devise_error_messages! %>
+    </center>
+    <br />
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+  <div><%= f.label :email %>
+  <%= f.email_field :email, autofocus: true %></div><br />
 
-  <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+  <div><%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+    <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %>
 
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+    <br />
 
+  <div><%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %></div><br />
+    <br />
+    <br />
+
+     </div>
+     <br />
+         <div class="center-submit cf">
+      <div class="rendered-sign">
   <div><%= f.submit "Sign up" %></div>
 <% end %>
+</div>
+</div>
+<br />
+</div>
+</div>
 
-<%= render "devise/shared/links" %>
+
+
+<script type="text/javascript">
+
+$(".mod-submit").find('input[name=commit]').addClass("btn btn-primary btn3d center-forgot");
+</script>
+
