@@ -1,6 +1,6 @@
 class UserController < ApplicationController
   before_filter :authenticate_user!
-  @@pledge_class = User.pledge_class
+  @@pledge_class = Pending.pledge_class
 
   
   # def initialize
