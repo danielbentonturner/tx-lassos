@@ -2,7 +2,6 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <span class="panel-title">Welcome,  <strong><%= current_user.name %></strong>
-    <%= link_to "Change your password", edit_user_registration_path, :id => "change-pass" %>
     <input type="button" id="main" class="btn btn-primary pull-right edit" value="Edit"/>
     </span>
   </div>
@@ -60,6 +59,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <span class="panel-title">Contact Information
+    <%= link_to "Change your password", edit_user_registration_path, :id => "change-pass" %>
     <input type="button" id="con" class="btn btn-primary pull-right edit" value="Edit"/>
     </span>
   </div>
