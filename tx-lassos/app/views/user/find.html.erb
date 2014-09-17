@@ -66,6 +66,7 @@
 				<tbody>
 				<% @users.each do |user| %>
 					<tr>
+						<% unless user.approved == false %>
 						<td><%= link_to user.name, "/profile/" + user.id.to_s %></td>
 						<td><%= link_to user.email, "/profile/" + user.id.to_s %></td>
 						<td><% if user.pledge_class_name %><%= link_to user.pledge_class_name, "/profile/" + user.id.to_s %><% end %></td>
@@ -75,6 +76,7 @@
 						<td><% if user.city_state %><%= link_to user.city_state, "/profile/" + user.id.to_s %><% end %></td>
 						<td><% if user.employer %><%= link_to user.employer, "/profile/" + user.id.to_s %><% end %></td>
 						<td><% if user.job_title %><%= link_to user.job_title, "/profile/" + user.id.to_s %><% end %></td>
+						<% end %>
 					</tr>
 				<% end %>
 				</tbody>
