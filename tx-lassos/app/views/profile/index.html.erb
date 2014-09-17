@@ -1,13 +1,10 @@
 <script src="editProfile.js"></script>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <span class="panel-title"><%= @user.name %>
-    
-    </span>
+    <span class="panel-title"><%= @user.name %></span>
   </div>
   <div class="panel-body-prof-main">
     <div class="wrapper">
-      
       <div class="main-wrapper">
         <div class="profile-main">
           <h2 class="section-header-top">Lassos Info</h2>
@@ -19,9 +16,8 @@
           </div>
         </div>
         <div class="grav-div">
-          <a href="http://en.gravatar.com"><%= image_tag current_user.gravatar_url(:size => 256), :class => 'grav-photo' %></a>
+          <a href="http://en.gravatar.com"><%= image_tag @user.gravatar_url(:size => 256), :class => 'grav-photo' %></a>
         </div>
-        
         <div class="professional">
           <h2 class="section-header-top">Professional</h2>
           <div class="pro-sub">
@@ -33,47 +29,56 @@
     </div>
   </div>
 </div>
+
 <div class="panel panel-default">
+  
   <div class="panel-heading">
-    <span class="panel-title">Contact Information
-    </span>
+    <span class="panel-title">Contact Information</span>
   </div>
+
   <div class="panel-body-prof-main">
     <div class="wrapper-contact">
       <div class="visible-social">
+
         <div class="address">
           <h3 class="section-header">Address</h3>
           <p><%= @user.street %></p>
           <p><%= @user.city_state %></p>
         </div>
+
         <div class="social">
           <h3 class="section-header">Social Networking</h3>
           <p><a href="http://www.facebook.com/<%= @user.facebook %>"><% if @user.facebook && @user.facebook != "" %><i class="fa fa-facebook"></i> <%= @user.facebook %><% end %></p>
-            <p><a href="http://www.twitter.com/<%= @user.twitter %>"><% if @user.twitter && @user.twitter != "" %><i class="fa fa-twitter"></i> <%= @user.twitter %><% end %></a></p>
-            <p><a href="http://www.instagram.com/<%= @user.instagram %>"><% if @user.instagram && @user.instagram != "" %><i class="fa fa-instagram"></i> <%= @user.instagram %><% end %></a></p>
-            <p><a href="http://www.pinterest.com/<%= @user.pinterest %>"><% if @user.pinterest && @user.pinterest != "" %><i class="fa fa-pinterest"></i> <%= @user.pinterest %><% end %></a></p>
-            <p><a href="http://www.linkedin.com/in/<%= @user.linkedin %>"><% if @user.linkedin && @user.linkedin != "" %><i class="fa fa-linkedin"></i> <%= @user.linkedin %><% end %></a></p>
-          </div>
-          <div class="misc">
-            <h3 class="section-header">Contact</h3>
-            <p><i class="fa fa-phone"></i></i> <%= @user.phone %></p>
-            <p><i class="fa fa-envelope"></i> <%= @user.email %></p>
-            <p><% if @user.email2 && @user.email2 != "" %><i class="fa fa-envelope-o"></i> <%= @user.email2 %> <% end %></p>
-          </div>
+          <p><a href="http://www.twitter.com/<%= @user.twitter %>"><% if @user.twitter && @user.twitter != "" %><i class="fa fa-twitter"></i> <%= @user.twitter %><% end %></a></p>
+          <p><a href="http://www.instagram.com/<%= @user.instagram %>"><% if @user.instagram && @user.instagram != "" %><i class="fa fa-instagram"></i> <%= @user.instagram %><% end %></a></p>
+          <p><a href="http://www.pinterest.com/<%= @user.pinterest %>"><% if @user.pinterest && @user.pinterest != "" %><i class="fa fa-pinterest"></i> <%= @user.pinterest %><% end %></a></p>
+          <p><a href="http://www.linkedin.com/in/<%= @user.linkedin %>"><% if @user.linkedin && @user.linkedin != "" %><i class="fa fa-linkedin"></i> <%= @user.linkedin %><% end %></a></p>
+        </div>
+
+        <div class="misc">
+          <h3 class="section-header">Contact</h3>
+          <p><i class="fa fa-phone"></i></i> <%= @user.phone %></p>
+          <p><i class="fa fa-envelope"></i> <%= @user.email %></p>
+          <p><% if @user.email2 && @user.email2 != "" %><i class="fa fa-envelope-o"></i> <%= @user.email2 %> <% end %></p>
         </div>
       </div>
     </div>
   </div>
+
   <div class="panel panel-default comments">
     <div class="panel-heading">
-      <span class="panel-title">Comment
-      </span>
+      <span class="panel-title">Comment</span>
     </div>
+
     <div class="panel-body-prof-main">
+      
       <div class="wrapper-contact">
         <div class="comments-area">
           <p><%= @user.comments %></p>
         </div>
       </div>
+
     </div>
   </div>
+
+</div>
