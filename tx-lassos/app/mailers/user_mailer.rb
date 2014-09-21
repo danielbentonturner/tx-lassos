@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: 'txlassos@gmail.com'
+  default from: 'admin@lassoalumni.org'
  
 	def signup_confirmation(user)
 	  mail to: user, subject: "Sign Up Confirmation"
