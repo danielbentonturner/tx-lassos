@@ -452,9 +452,9 @@ strong {
 		font-size: 0.8em;
 	}
 
-	.school-info {
+/*	.school-info {
 
-	}
+	}*/
 	.professional {
 		max-width: 100%;
 	}
@@ -477,11 +477,11 @@ strong {
 		text-decoration: none;
 		margin: 0;
 		padding: 0;
-		top; 1;
+		top: 1;
 	}
 
 	.top-form, .social-form {
-	  position: absolute;
+	  position: relative;
 	  top: 20px;
 	  left: 0;
 	  z-index: 9998;
