@@ -17,3 +17,6 @@
 
 # Ignore installed gems
 /vendor/bundle
+
+# Ignore email details
+/config/initializers/app_env_vars.rb

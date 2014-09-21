@@ -29,9 +29,10 @@ class User < ActiveRecord::Base
   end
 
   def send_confirmation_notice_to_admin
-    @admin = User.where(admin: true)
-    @admin_emails = @admin.map { |x| x.email }
-    @admin_emails.each { |x| UserMailer.signup_confirmation(x).deliver }
+    UserMailer.signup_confirmation('admin@lassoalumni.org').deliver
+    # @admin = User.where(admin: true)
+    # @admin_emails = @admin.map { |x| x.email }
+    # @admin_emails.each { |x| UserMailer.signup_confirmation(x).deliver }
   end 
 
   def self.need_approval
