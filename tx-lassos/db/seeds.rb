@@ -12,8 +12,8 @@ User.create(
     street: '123 Something St.',
     city_state: 'Austin, TX 78701',
     phone: '512-555-1234',
-    email: 'alixmorrow@alixcompany.com',
-    email2: 'alixmorrow@hotmail.com',
+    email: 'alixmorrow@hotmail.com',
+    email2: 'alixmorrow@alixcompany.com',
     major: 'Advertising',
     pledge_class: '1998',
     pledge_class_name: 'Founder',
@@ -29,8 +29,8 @@ User.create(
     comments: 'These are comments. They are awesome. Hurray!',
     admin: true,
     approved: true,
-    password: "stuffnthings",
-    password_confirmation: "stuffnthings"
+    password: "changemenow",
+    password_confirmation: "changemenow"
   }
 )
 
