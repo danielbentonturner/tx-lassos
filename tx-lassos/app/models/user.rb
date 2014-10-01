@@ -39,15 +39,6 @@ class User < ActiveRecord::Base
     User.where(approved: false)
   end
 
-  # def self.export(options = {})
-  #   CSV.generate do |csv|
-  #     csv << column_names
-  #     all.each do |user|
-  #       csv << user.attributes.values_at(*column_names)
-  #     end
-  #   end
-  # end
-
   include Gravtastic
   gravtastic
 
@@ -57,9 +48,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable
 
-  # def send_welcome_message
-  #   UserMailer.signup_confirmation(self).deliver
-  # end
 end
 
 

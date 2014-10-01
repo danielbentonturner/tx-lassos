@@ -32,8 +32,8 @@ class PendingController < ApplicationController
     if params['destroy']
       Pending.destroy_user(params['destroy'])
     else
-      Pending.convert_pending_to_user(params['id'])
       User.find(params['id']).send_confirmation_instructions
+      Pending.convert_pending_to_user(params['id'])
     end
     index
   end

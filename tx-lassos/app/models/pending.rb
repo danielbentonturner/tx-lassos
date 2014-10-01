@@ -10,7 +10,6 @@ class Pending < ActiveRecord::Base
     temp = User.where(id: user_id)
     new_user = temp.first
     new_user.approved = true
-    UserMailer.signup_confirmation(new_user.email)
     pending_data = Pending.where(email: new_user.email)
     if pending_data.first
       new_user.street = pending_data.first.street_address
