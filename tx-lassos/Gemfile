@@ -46,3 +46,5 @@ gem 'pry-byebug'
 gem 'rails-simple-search'
 
 gem 'pg'
+
+ruby '2.0.0p481'
