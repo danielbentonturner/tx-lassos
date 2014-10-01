@@ -47,4 +47,4 @@ gem 'rails-simple-search'
 
 gem 'pg'
 
-ruby '2.0.0p481'
+ruby '2.0.0'
