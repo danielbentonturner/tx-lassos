@@ -514,6 +514,10 @@ strong {
 		width: 100%;
 	}
 
+	.remember {
+		margin: 0 auto;
+	}
+
 /*	.top-form:hover {
 	  left: 250px;
 	}*/
@@ -532,4 +536,17 @@ strong {
 	.social-form:hover .social-form-left {
 		left: 0;
 	}*/
+}
+
+@media (max-width : 1000px) {
+
+	#user_remember_me {
+		margin-right: 40%;
+	}
+
+	.remember { 
+		margin-left: -15px;
+	}
+
+
 }

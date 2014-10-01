@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "my_registration" }
   resource :pending
   #, :controllers => { :registrations => "registrations" }
   get '/admin' => 'pending#index'
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post "/find" => 'user#find'
   post "/admin" => 'pending#handle_user'
   get "/admin_edit" => 'pending#admin_edit'
+  # post "/users" => 'registration#create'
 
   #admin CP
   #user/ID
